@@ -93,3 +93,14 @@ def standardize(
 
     X_scaled = (X - mean) / std
     return X_scaled, mean, std
+
+def label_encode(labels: np.ndarray) -> np.ndarray:
+    """
+    Label encode string or categorical labels to integers.
+    labels: shape (n_samples,), contains string or categorical labels
+    Returns:
+        encoded_labels: shape (n_samples,), integer labels from 0 to K-1
+    """
+    labels = np.asarray(labels)
+    unique_labels, encoded_labels = np.unique(labels, return_inverse=True)
+    return encoded_labels
