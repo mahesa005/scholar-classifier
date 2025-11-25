@@ -1,6 +1,5 @@
 import numpy as np
 from src.core.base_model import BaseClassifier
-from src.utils.metrics import f1_macro
 
 class SoftmaxRegression(BaseClassifier):
     """
