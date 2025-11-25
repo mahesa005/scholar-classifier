@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 from core.base_model import BaseClassifier
 
 class SoftmaxRegression(BaseClassifier):
@@ -22,13 +21,13 @@ class SoftmaxRegression(BaseClassifier):
         self.verbose = verbose
 
         # Learned during training
-        self.weights = None  # shape (n_features, n_classes)
+        self.weights = None  # shape (n_features, n_features_with_bias)
         self.mean = None
         self.std = None
         self.loss_history = []
         self.classes_ = None
 
-    def _add_bias(self, X: np) -> np.ndarray:
+    def _add_bias(self, X: np.ndarray) -> np.ndarray:
         """
         Add a bias feature (column of ones) to the input data X.
         
@@ -42,8 +41,9 @@ class SoftmaxRegression(BaseClassifier):
         X_bias : np.ndarray, shape (n_samples, n_features + 1)
             Input matrix with an additional bias column at the front.
         """
-        # TODO: implement bias term concatenation
-        raise NotImplementedError("Method _add_bias not implemented yet")
+
+        bias = np.full((X.shape[0], 1), 1) # Concatenate a column of ones
+        return np.hstack((bias, X)) # return X with bias column added
     
     def _softmax(self, Z: np.ndarray) -> np.ndarray:
         """
@@ -63,28 +63,43 @@ class SoftmaxRegression(BaseClassifier):
         -----
         The softmax function is defined as:
             softmax(z_i) = exp(z_i) / sum_j exp(z_j)
+        
+        To avoid overflow issues, it is common to subtract the maximum
+        score from each score before exponentiating.
         """
-        # TODO: implement softmax computation
-        raise NotImplementedError("Method _softmax not implemented yet")
+        # Subtract max for numerical stability, calculate exp scores
+        exp_scores = np.exp(Z - np.max(Z, axis=1, keepdims=True))
+
+        # Normalize to get probabilities
+        return exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
+        
     
     def _one_hot(self, y: np.ndarray, n_classes: int) -> np.ndarray:
         """
         One-hot encode the class labels.
-        
+
+        Assumption: y has already been label encoded to integers 0..K-1.
+        ----------
+
         Parameters
         ----------
         y : np.ndarray, shape (n_samples,)
             Class labels as integers.
         n_classes : int
             Total number of classes.
-
         Returns
         -------
         y_one_hot : np.ndarray, shape (n_samples, n_classes)
             One-hot encoded class labels.
         """
-        # TODO: implement one-hot encoding
-        raise NotImplementedError("Method _one_hot not implemented yet")
+        # Initialize the one-hot encoded matrix
+        one_hot = np.zeros((y.shape[0], n_classes))
+
+        # Set the appropriate elements to 1
+        for i in range(y.shape[0]):
+            class_index = y[i]
+            one_hot[i][class_index] = 1
+        return one_hot
     
     def _compute_loss(self, Y_true: np.ndarray, Y_pred: np.ndarray) -> float:
         """
@@ -101,11 +116,23 @@ class SoftmaxRegression(BaseClassifier):
         -------
         loss : float
             The average cross-entropy loss over all samples.
+
+        Notes
+        -----
+        - The formula is: L = -1/N * sum_i sum_k Y_true[i, k] * log(P[i, k])
+        - Only the probability of the true class contributes to the loss
+          for each sample because Y_true is one-hot.
         """
-        # TODO: implement loss computation
-        raise NotImplementedError("Method _compute_loss not implemented yet")
+        n_samples = Y_true.shape[0]
+        
+        # Calculate the log probabilities
+        log_probs = np.log(Y_pred + 1e-15)  # Add small constant to avoid log(0)
     
-    def fit(self, X: np.ndarray, y: np.ndarray):
+        # Compute the cross-entropy loss
+        loss = -np.sum(Y_true * log_probs) / n_samples
+        return loss
+
+    def fit(self, X: np.ndarray, y: np.ndarray, random_weights: bool=True):
         """
         Train the softmax regression model using gradient descent.
         
@@ -129,8 +156,61 @@ class SoftmaxRegression(BaseClassifier):
             d. Update W using gradient ascent with learning rate.
             e. Optionally compute and store loss for monitoring.
         """
-        # TODO: implement training procedure
-        raise NotImplementedError("Method fit not implemented yet")
+        # Add bias term to input features
+        X_bias = self._add_bias(X)
+
+        # Initialize weights
+        if random_weights:
+            # Random small weights
+            self.weights = np.random.randn(self.n_classes, X_bias.shape[1]) * 0.01
+        else:
+            # Zero initialization
+            self.weights = np.zeros((self.n_classes, X_bias.shape[1]))
+
+        # One-hot encode labels
+        Y_one_hot = self._one_hot(y, self.n_classes)
+
+        if self.verbose:
+            print("Starting training...")
+            for epoch in range(self.max_iter):
+                # Compute linear scores
+                Z = X_bias @ self.weights.T  # shape (n_samples, n_classes)
+
+                # Compute softmax probabilities
+                probs = self._softmax(Z)  # shape (n_samples, n_classes)
+
+                # Compute the error
+                error = Y_one_hot - probs  # shape (n_samples, n_classes)
+
+                # Compute gradient and update weights
+                gradient = (error.T @ X_bias) / X_bias.shape[0]  # shape (n_classes, n_features + 1)
+                self.weights += self.lr * gradient  # Update weights
+
+                # Compute loss for monitoring
+                loss = self._compute_loss(Y_one_hot, probs)
+                self.loss_history.append(loss) # Store loss in history
+
+                if epoch % 10 == 0 or epoch == self.max_iter - 1:
+                    print(f"Epoch {epoch+1}/{self.max_iter}, Loss: {loss:.4f}")
+        else:
+            # Training loop
+            for epoch in range(self.max_iter):
+                # Compute linear scores
+                Z = X_bias @ self.weights.T  # shape (n_samples, n_classes)
+
+                # Compute softmax probabilities
+                probs = self._softmax(Z)  # shape (n_samples, n_classes)
+
+                # Compute the error
+                error = Y_one_hot - probs  # shape (n_samples, n_classes)
+
+                # Compute gradient and update weights
+                gradient = (error.T @ X_bias) / X_bias.shape[0]  # shape (n_classes, n_features + 1)
+                self.weights += self.lr * gradient  # Update weights
+
+                # Compute loss for monitoring
+                loss = self._compute_loss(Y_one_hot, probs)
+                self.loss_history.append(loss) # Store loss in history
     
     def predict_proba(self, X: np.ndarray) -> np.ndarray:
         """
@@ -146,9 +226,15 @@ class SoftmaxRegression(BaseClassifier):
         probs : np.ndarray, shape (n_samples, n_classes)
             Predicted class probabilities for each sample.
         """
-        # TODO: implement probability prediction
-        raise NotImplementedError("Method predict_proba not implemented yet")
-    
+
+        # Calculate Z score for each label
+        W = self.weights  # shape (n_classes, n_features + 1)
+        X_bias = self._add_bias(X) # add bias term
+
+        Z = X_bias @ W.T  # calculate linear scores
+        return self._softmax(Z)  # return softmax probabilities
+
+
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
         Predict class labels for input samples.
@@ -163,5 +249,5 @@ class SoftmaxRegression(BaseClassifier):
         y_pred : np.ndarray, shape (n_samples,)
             Predicted class labels as integers.
         """
-        # TODO: implement class label prediction
-        raise NotImplementedError("Method predict not implemented yet")
+        probs = self.predict_proba(X)  # shape (n_samples, n_classes)
+        return np.argmax(probs, axis=1)  # return class with highest probability
