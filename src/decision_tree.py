@@ -3,8 +3,8 @@ import pandas as pd
 import pickle
 import os
 from collections import Counter
+from src.core.base_model import BaseClassifier
 
-# --- 1. CLASS NODE ---
 class Node:
     def __init__(self, prediction=None):
         self.prediction = prediction
@@ -14,8 +14,7 @@ class Node:
         self.threshold = None
         self.children = {}
 
-# --- 2. CLASS ID3 DECISION TREE ---
-class ID3DecisionTree:
+class ID3DecisionTree(BaseClassifier):
     def __init__(self, min_samples_split=2, max_depth=None):
         self.min_samples_split = min_samples_split
         self.max_depth = max_depth
@@ -23,7 +22,6 @@ class ID3DecisionTree:
         self.feature_types = []
         self.feature_names = []
 
-    # --- SAVE & LOAD ---
     def save_model(self, filename):
         folder = os.path.dirname(filename)
         if folder and not os.path.exists(folder):
@@ -31,310 +29,143 @@ class ID3DecisionTree:
             except OSError: pass
         try:
             with open(filename, 'wb') as f: pickle.dump(self, f)
-            print(f"💾 Model BERHASIL disimpan ke: {filename}")
-        except Exception as e: print(f"❌ Gagal menyimpan model: {e}")
+            print(f"[INFO] Model disimpan: {filename}")
+        except Exception as e: print(f"[ERROR] Gagal simpan: {e}")
 
     @staticmethod
     def load_model(filename):
         if not os.path.exists(filename): return None
         try:
             with open(filename, 'rb') as f: return pickle.load(f)
-        except Exception as e: print(f"❌ Gagal memuat model: {e}"); return None
+        except Exception as e: print(f"[ERROR] Gagal load: {e}"); return None
 
-    # --- TRAINING ---
-    def fit(self, X, y, feature_names=None):
-
-        # 1. PERSIAPAN DATA (Data Preprocessing)
-        X = pd.DataFrame(X).copy()
+    def fit(self, X: np.ndarray, y: np.ndarray, feature_names=None):
+        if isinstance(X, pd.DataFrame):
+            if feature_names is None: feature_names = X.columns.tolist()
+            X_df = X.copy()
+        else:
+            X_df = pd.DataFrame(X)
+        
         y = np.array(y)
-        # 2. MEMBERSIHKAN DATA (Handling Missing Values)
-        for col in X.columns:
-            if X[col].isnull().any():
-                if pd.api.types.is_numeric_dtype(X[col]): X[col] = X[col].fillna(X[col].mean())
-                else: X[col] = X[col].fillna(X[col].mode()[0])
-        X = X.values
-        # 3. KENALAN DENGAN FITUR (Type Detection)
+
+        for col in X_df.columns:
+            if X_df[col].isnull().any():
+                if pd.api.types.is_numeric_dtype(X_df[col]): X_df[col] = X_df[col].fillna(X_df[col].mean())
+                else: X_df[col] = X_df[col].fillna(X_df[col].mode()[0])
+        
+        X_vals = X_df.values
+
         self.feature_types = []
-        n_features = X.shape[1]
+        n_features = X_vals.shape[1]
         for i in range(n_features):
-            if isinstance(X[0, i], (int, float, np.number)) and not isinstance(X[0, i], str):
-                self.feature_types.append('continuous')
-            else: self.feature_types.append('categorical')
+            val = X_vals[0, i]
+            self.feature_types.append('continuous' if isinstance(val, (int, float, np.number)) and not isinstance(val, str) else 'categorical')
 
-        # 4. MULAI MEMBANGUN POHON (Core Algorithm)
         self.feature_names = feature_names if feature_names else [f"feat_{i}" for i in range(n_features)]
-        attribute_indices = list(range(n_features))
-        self.root = self._id3(X, y, attribute_indices, depth=0)
+        
+        self.root = self._id3(X_vals, y, list(range(n_features)), depth=0)
 
-    # --- LOGIKA ID3 ---
+    def predict(self, X: np.ndarray) -> np.ndarray:
+        X = np.array(X, dtype=object)
+        return np.array([self._traverse(x, self.root) for x in X])
+
     def _id3(self, X, y, attribute_indices, depth):
         n_samples = X.shape[0]
         n_labels = len(np.unique(y))
 
-        # Jika semua data labelnya sama (Murni) -> Berhenti
         if n_labels == 1: return Node(prediction=y[0])
-        
-        # Cek Max Depth (Rem Darurat)
-        hit_max_depth = (self.max_depth is not None and depth >= self.max_depth)
-
-         # Jika fitur habis, atau sampel terlalu sedikit -> Berhenti (Voting terbanyak)
-        if len(attribute_indices) == 0 or hit_max_depth or n_samples < self.min_samples_split:
+        hit_max = (self.max_depth is not None and depth >= self.max_depth)
+        if len(attribute_indices) == 0 or hit_max or n_samples < self.min_samples_split:
             return Node(prediction=self._most_common_label(y))
 
-       # Panggil fungsi matematika (Entropy & Gain)
-        best_feat_idx, best_gain, best_threshold = self._get_best_attribute(X, y, attribute_indices)
-        if best_feat_idx is None: return Node(prediction=self._most_common_label(y))
-
+        best_feat, best_gain, best_thr = self._get_best_attribute(X, y, attribute_indices)
+        if best_feat is None: return Node(prediction=self._most_common_label(y))
 
         node = Node()
-        node.feature_idx = best_feat_idx
-        node.feature_name = self.feature_names[best_feat_idx]
-        node.is_continuous = (self.feature_types[best_feat_idx] == 'continuous')
+        node.feature_idx = best_feat
+        node.feature_name = self.feature_names[best_feat]
+        node.is_continuous = (self.feature_types[best_feat] == 'continuous')
 
         if node.is_continuous:
-            node.threshold = best_threshold
-            left_mask = X[:, best_feat_idx] <= best_threshold
-            X_left, y_left = X[left_mask], y[left_mask]
-            X_right, y_right = X[~left_mask], y[~left_mask]
+            node.threshold = best_thr
+            left_mask = X[:, best_feat] <= best_thr
+            X_l, y_l = X[left_mask], y[left_mask]
+            X_r, y_r = X[~left_mask], y[~left_mask]
             
-            if len(X_left) == 0 or len(X_right) == 0: return Node(prediction=self._most_common_label(y))
-            node.children['<='] = self._id3(X_left, y_left, attribute_indices, depth + 1)
-            node.children['>'] = self._id3(X_right, y_right, attribute_indices, depth + 1)
+            if len(X_l) == 0 or len(X_r) == 0: return Node(prediction=self._most_common_label(y))
+            node.children['<='] = self._id3(X_l, y_l, attribute_indices, depth + 1)
+            node.children['>'] = self._id3(X_r, y_r, attribute_indices, depth + 1)
         else:
-            unique_values = np.unique(X[:, best_feat_idx])
-            new_attributes = [a for a in attribute_indices if a != best_feat_idx]
-            for val in unique_values:
-                mask = X[:, best_feat_idx] == val
-                X_subset, y_subset = X[mask], y[mask]
-                if len(X_subset) == 0: child = Node(prediction=self._most_common_label(y))
-                else: child = self._id3(X_subset, y_subset, new_attributes, depth + 1)
+            new_attrs = [a for a in attribute_indices if a != best_feat]
+            for val in np.unique(X[:, best_feat]):
+                mask = X[:, best_feat] == val
+                X_sub, y_sub = X[mask], y[mask]
+                child = Node(prediction=self._most_common_label(y)) if len(X_sub) == 0 else self._id3(X_sub, y_sub, new_attrs, depth + 1)
                 node.children[val] = child
         return node
 
     def _get_best_attribute(self, X, y, attribute_indices):
-        best_gain = -1; best_feat_idx = None; best_threshold = None
-        for feat_idx in attribute_indices:
-            X_col = X[:, feat_idx]
-            is_cont = (self.feature_types[feat_idx] == 'continuous')
-            if is_cont:
+        best_gain, best_feat, best_thr = -1, None, None
+        for idx in attribute_indices:
+            X_col = X[:, idx]
+            if self.feature_types[idx] == 'continuous':
                 thresholds = np.unique(X_col)
                 if len(thresholds) > 50: thresholds = np.percentile(thresholds, np.linspace(0, 100, 10))
                 for thr in thresholds:
-                    gain = self._calculate_gain_continuous(y, X_col, thr)
-                    if gain > best_gain: best_gain = gain; best_feat_idx = feat_idx; best_threshold = thr
+                    gain = self._calc_gain_cont(y, X_col, thr)
+                    if gain > best_gain: best_gain, best_feat, best_thr = gain, idx, thr
             else:
-                gain = self._calculate_gain_categorical(y, X_col)
-                if gain > best_gain: best_gain = gain; best_feat_idx = feat_idx; best_threshold = None
-        return best_feat_idx, best_gain, best_threshold
+                gain = self._calc_gain_cat(y, X_col)
+                if gain > best_gain: best_gain, best_feat, best_thr = gain, idx, None
+        return best_feat, best_gain, best_thr
 
-    def _calculate_gain_categorical(self, y, X_col):
-        parent_entropy = self._entropy(y)
-        n = len(y); child_entropy_sum = 0
-        unique_vals, counts = np.unique(X_col, return_counts=True)
-        for val, count in zip(unique_vals, counts):
-            child_entropy_sum += (count / n) * self._entropy(y[X_col == val])
-        return parent_entropy - child_entropy_sum
+    def _calc_gain_cat(self, y, X_col):
+        parent_ent = self._entropy(y)
+        n, child_ent_sum = len(y), 0
+        vals, counts = np.unique(X_col, return_counts=True)
+        for val, count in zip(vals, counts):
+            child_ent_sum += (count / n) * self._entropy(y[X_col == val])
+        return parent_ent - child_ent_sum
 
-    def _calculate_gain_continuous(self, y, X_col, threshold):
-        parent_entropy = self._entropy(y)
+    def _calc_gain_cont(self, y, X_col, thr):
+        parent_ent = self._entropy(y)
         n = len(y)
-        left_mask = X_col <= threshold
-        if np.sum(left_mask) == 0 or np.sum(~left_mask) == 0: return 0
-        y_left, y_right = y[left_mask], y[~left_mask]
-        child_entropy = (len(y_left)/n)*self._entropy(y_left) + (len(y_right)/n)*self._entropy(y_right)
-        return parent_entropy - child_entropy
+        left = X_col <= thr
+        if np.sum(left) == 0 or np.sum(~left) == 0: return 0
+        y_l, y_r = y[left], y[~left]
+        return parent_ent - ((len(y_l)/n)*self._entropy(y_l) + (len(y_r)/n)*self._entropy(y_r))
 
     def _entropy(self, y):
-        hist = np.bincount(y) if np.issubdtype(y.dtype, np.integer) else np.unique(y, return_counts=True)[1]
-        ps = hist / len(y)
+        ps = (np.bincount(y) if np.issubdtype(y.dtype, np.integer) else np.unique(y, return_counts=True)[1]) / len(y)
         return -np.sum([p * np.log2(p) for p in ps if p > 0])
 
     def _most_common_label(self, y):
-        if len(y) == 0: return None
-        return Counter(y).most_common(1)[0][0]
-
-    def predict(self, X):
-        X = np.array(X, dtype=object)
-        return np.array([self._traverse(x, self.root) for x in X])
+        return None if len(y) == 0 else Counter(y).most_common(1)[0][0]
 
     def _traverse(self, x, node):
         if node.prediction is not None: return node.prediction
         val = x[node.feature_idx]
         if node.is_continuous:
-            if val <= node.threshold:
-                if '<=' in node.children: return self._traverse(x, node.children['<='])
-            else:
-                if '>' in node.children: return self._traverse(x, node.children['>'])
+            next_node = node.children.get('<=' if val <= node.threshold else '>')
         else:
-            if val in node.children: return self._traverse(x, node.children[val])
-        if len(node.children) > 0: return self._traverse(x, list(node.children.values())[0])
-        return node.prediction
+            next_node = node.children.get(val)
+        if next_node is None and node.children: next_node = list(node.children.values())[0]
+        return self._traverse(x, next_node) if next_node else node.prediction
 
-    # --- VISUALISASI (UPDATED: TERIMA PARAMETER FILE) ---
-    def print_tree(self, node=None, prefix="", is_last=True, is_root=True, branch_label="", max_depth=None, current_depth=0, file=None):
+    def print_tree(self, node=None, prefix="", is_last=True, is_root=True, branch="", max_depth=None, cur_depth=0, file=None):
         if node is None: node = self.root
-        
-        # Cek apakah print ke Layar (Warna) atau File (Polos)
-        use_color = (file is None)
-
-        if max_depth is not None and current_depth > max_depth:
+        if max_depth is not None and cur_depth > max_depth:
             if is_last and not is_root: print(f"{prefix}└── ...", file=file)
             return
 
-        if node.prediction is not None:
-            txt = f"Output: {node.prediction}"
-            if use_color: txt = f"\033[92m{txt}\033[0m"
+        txt = f"Output: {node.prediction}" if node.prediction is not None else f"[{node.feature_name}]"
+        if is_root: print(txt, file=file); new_prefix = ""
         else:
-            ft_name = node.feature_name if node.feature_name else f"Feat{node.feature_idx}"
-            txt = f"[{ft_name}?]"
-            if use_color: txt = f"\033[94m{txt}\033[0m"
-
-        if is_root:
-            print(txt, file=file)
-            new_prefix = ""
-        else:
-            connector = "└── " if is_last else "├── "
-            branch_txt = f"({branch_label})"
-            if use_color: branch_txt = f"\033[93m{branch_txt}\033[0m"
-            print(f"{prefix}{connector}{branch_txt} {txt}", file=file)
+            branch_txt = f"({branch})"
+            print(f"{prefix}{'└── ' if is_last else '├── '}{branch_txt} {txt}", file=file)
             new_prefix = prefix + ("    " if is_last else "│   ")
 
         if node.prediction is None:
-            children_keys = list(node.children.keys())
-            for i, key in enumerate(children_keys):
-                self.print_tree(node.children[key], new_prefix, (i == len(children_keys) - 1), False, str(key), max_depth, current_depth + 1, file=file)
-# --- MAIN PROGRAM (FINAL + TXT EXPORT) ---
-if __name__ == "__main__":
-    import sys
-    from sklearn.model_selection import train_test_split
-    from sklearn.metrics import accuracy_score
-    from sklearn.tree import DecisionTreeClassifier
-
-    print("🚀 Memulai Program ID3 Decision Tree...")
-
-    # 1. Setup Path
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(base_dir)
-    train_path = os.path.join(project_root, 'data', 'train.csv')
-    test_path  = os.path.join(project_root, 'data', 'test.csv')
-    
-    # Output Files
-    models_dir = os.path.join(project_root, 'models')
-    if not os.path.exists(models_dir): os.makedirs(models_dir)
-    
-    save_model_path = os.path.join(models_dir, 'dtl_model.pkl')
-    save_txt_path = os.path.join(models_dir, 'dtl_model.txt') # <--- Path untuk file TXT
-    
-    sub_scratch_path = os.path.join(project_root, 'data', 'submission_scratch.csv')
-    sub_sklearn_path = os.path.join(project_root, 'data', 'submission_sklearn.csv')
-
-    try:
-        # --- INPUT USER ---
-        print("\n⚙️ --- KONFIGURASI ---")
-        input_depth = input("⌨️  Masukkan Max Depth (Enter = Unlimited): ")
-        if input_depth.strip() == "":
-            MAX_DEPTH = None
-            print("   -> Mode: Unlimited (None)")
-        else:
-            try:
-                MAX_DEPTH = int(input_depth)
-                print(f"   -> Max Depth: {MAX_DEPTH}")
-            except:
-                MAX_DEPTH = None
-                print("   ⚠️ Input invalid. Default: Unlimited")
-
-        # --- PREPARE DATA ---
-        print(f"\n📂 Loading Data...")
-        df_train = pd.read_csv(train_path)
-        if 'id' in df_train.columns: df_train = df_train.drop('id', axis=1)
-        
-        X = df_train.drop('Target', axis=1).values
-        y = df_train['Target'].values
-        feature_names = df_train.drop('Target', axis=1).columns.tolist()
-
-        # ==================================================================
-        # 🧪 SKENARIO 1: VALIDASI INTERNAL
-        # ==================================================================
-        print("\n" + "="*50)
-        print("🧪 SKENARIO 1: VALIDASI INTERNAL (Split Train/Val)")
-        print("="*50)
-        
-        X_part_train, X_part_val, y_part_train, y_part_val = train_test_split(X, y, test_size=0.2, random_state=42)
-        
-        print("🛠️  Melatih Model Scratch (80% Data)...")
-        model_val = ID3DecisionTree(max_depth=MAX_DEPTH)
-        model_val.fit(X_part_train, y_part_train, feature_names=feature_names)
-        acc_scratch = accuracy_score(y_part_val, model_val.predict(X_part_val))
-
-        print("🤖 Melatih Model Scikit-Learn (80% Data)...")
-        sklearn_val = DecisionTreeClassifier(criterion='entropy', max_depth=MAX_DEPTH, random_state=42)
-        sklearn_val.fit(X_part_train, y_part_train)
-        acc_sklearn = accuracy_score(y_part_val, sklearn_val.predict(X_part_val))
-
-        print(f"\n📊 HASIL RONDE 1 (AKURASI):")
-        print(f"   1. ID3 From Scratch : {acc_scratch * 100:.2f}%")
-        print(f"   2. Scikit-Learn     : {acc_sklearn * 100:.2f}%")
-
-        # ==================================================================
-        # 🚀 SKENARIO 2: FULL TRAINING & UJIAN
-        # ==================================================================
-        print("\n" + "="*50)
-        print("🚀 SKENARIO 2: FULL TRAINING & UJIAN (Test.csv)")
-        print("="*50)
-
-        if os.path.exists(test_path):
-            print("💪 Retraining Model dengan 100% Data Latih...")
-            final_model = ID3DecisionTree(max_depth=MAX_DEPTH)
-            final_model.fit(X, y, feature_names=feature_names)
-            
-            # Simpan Model Akhir (.pkl)
-            final_model.save_model(save_model_path)
-
-            # --- VISUALISASI ---
-            print("\n🖼️  --- VISUALISASI (Model Full) ---")
-            default_vis = MAX_DEPTH
-            display_text = "Unlimited" if default_vis is None else str(default_vis)
-            
-            vis_input = input(f"⌨️  Depth Visualisasi (Enter = {display_text}): ")
-            
-            if vis_input.strip() == "":
-                vis_depth = default_vis 
-            else:
-                try:
-                    vis_depth = int(vis_input)
-                except:
-                    vis_depth = default_vis
-
-            print("-" * 40)
-            # Print ke Layar (Warna)
-            final_model.print_tree(max_depth=vis_depth)
-            print("-" * 40)
-            
-            # --- [BAGIAN BARU] SIMPAN TREE KE TXT ---
-            try:
-                with open(save_txt_path, 'w', encoding='utf-8') as f:
-                    # Print ke File (Tanpa Warna)
-                    final_model.print_tree(max_depth=vis_depth, file=f)
-                print(f"📄 Struktur Tree (Text) disimpan ke: {save_txt_path}")
-            except Exception as e:
-                print(f"❌ Gagal menyimpan TXT: {e}")
-
-            # PREDIKSI DATA TEST
-            df_test = pd.read_csv(test_path)
-            ids = df_test['id'] if 'id' in df_test.columns else range(len(df_test))
-            if 'id' in df_test.columns: df_test = df_test.drop('id', axis=1)
-            X_test_real = df_test.values
-
-            print("\n🔮 Memprediksi data test.csv (Tanpa Kunci Jawaban)...")
-            pred_scratch_test = final_model.predict(X_test_real)
-
-            sub_scratch = pd.DataFrame({'id': ids, 'Target': pred_scratch_test})
-            sub_scratch.to_csv(sub_scratch_path, index=False)
-
-            print(f"✅ File Submission Siap: {sub_scratch_path}")
-            print("   (Upload ke Kaggle untuk melihat Akurasi Test)")
-        else:
-            print("⚠️ File test.csv tidak ditemukan.")
-
-    except Exception as e:
-        print(f"❌ Terjadi Error: {e}")
+            keys = list(node.children.keys())
+            for i, k in enumerate(keys):
+                self.print_tree(node.children[k], new_prefix, i == len(keys)-1, False, str(k), max_depth, cur_depth + 1, file)
