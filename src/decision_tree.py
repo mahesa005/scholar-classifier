@@ -1,8 +1,9 @@
 import numpy as np
 import pandas as pd
-import pickle
 import os
 from collections import Counter
+
+from core.base_model import BaseClassifier
 
 # --- 1. CLASS NODE ---
 class Node:
@@ -15,31 +16,13 @@ class Node:
         self.children = {}
 
 # --- 2. CLASS ID3 DECISION TREE ---
-class ID3DecisionTree:
+class ID3DecisionTree(BaseClassifier):
     def __init__(self, min_samples_split=2, max_depth=None):
         self.min_samples_split = min_samples_split
         self.max_depth = max_depth
         self.root = None
         self.feature_types = []
         self.feature_names = []
-
-    # --- SAVE & LOAD ---
-    def save_model(self, filename):
-        folder = os.path.dirname(filename)
-        if folder and not os.path.exists(folder):
-            try: os.makedirs(folder)
-            except OSError: pass
-        try:
-            with open(filename, 'wb') as f: pickle.dump(self, f)
-            print(f"💾 Model BERHASIL disimpan ke: {filename}")
-        except Exception as e: print(f"❌ Gagal menyimpan model: {e}")
-
-    @staticmethod
-    def load_model(filename):
-        if not os.path.exists(filename): return None
-        try:
-            with open(filename, 'rb') as f: return pickle.load(f)
-        except Exception as e: print(f"❌ Gagal memuat model: {e}"); return None
 
     # --- TRAINING ---
     def fit(self, X, y, feature_names=None):
@@ -203,6 +186,8 @@ class ID3DecisionTree:
             children_keys = list(node.children.keys())
             for i, key in enumerate(children_keys):
                 self.print_tree(node.children[key], new_prefix, (i == len(children_keys) - 1), False, str(key), max_depth, current_depth + 1, file=file)
+
+
 # --- MAIN PROGRAM (FINAL + TXT EXPORT) ---
 if __name__ == "__main__":
     import sys
