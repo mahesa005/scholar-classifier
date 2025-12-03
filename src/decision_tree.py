@@ -1,10 +1,10 @@
 import numpy as np
 import pandas as pd
-import pickle
 import os
 from collections import Counter
-from src.core.base_model import BaseClassifier
+from core.base_model import BaseClassifier
 
+# --- 1. CLASS NODE ---
 class Node:
     def __init__(self, prediction=None):
         self.prediction = prediction
@@ -22,30 +22,11 @@ class ID3DecisionTree(BaseClassifier):
         self.feature_types = []
         self.feature_names = []
 
-    def save_model(self, filename):
-        folder = os.path.dirname(filename)
-        if folder and not os.path.exists(folder):
-            try: os.makedirs(folder)
-            except OSError: pass
-        try:
-            with open(filename, 'wb') as f: pickle.dump(self, f)
-            print(f"[INFO] Model disimpan: {filename}")
-        except Exception as e: print(f"[ERROR] Gagal simpan: {e}")
+    # --- TRAINING ---
+    def fit(self, X, y, feature_names=None):
 
-    @staticmethod
-    def load_model(filename):
-        if not os.path.exists(filename): return None
-        try:
-            with open(filename, 'rb') as f: return pickle.load(f)
-        except Exception as e: print(f"[ERROR] Gagal load: {e}"); return None
-
-    def fit(self, X: np.ndarray, y: np.ndarray, feature_names=None):
-        if isinstance(X, pd.DataFrame):
-            if feature_names is None: feature_names = X.columns.tolist()
-            X_df = X.copy()
-        else:
-            X_df = pd.DataFrame(X)
-        
+        # 1. PERSIAPAN DATA (Data Preprocessing)
+        X = pd.DataFrame(X).copy()
         y = np.array(y)
 
         for col in X_df.columns:
