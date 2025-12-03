@@ -148,13 +148,16 @@ class SoftmaxRegression(BaseClassifier):
         1. Optionally standardize features and store mean and std.
         2. Add bias term to X.
         3. Initialize weight matrix W.
-        4. Convert y to one-hot representation.
-        5. For each epoch:
+        4. For each epoch:
             a. Compute linear scores Z = X @ W.T
             b. Compute probabilities P = softmax(Z)
             c. Compute error (Y_true - P)
             d. Update W using gradient ascent with learning rate.
             e. Optionally compute and store loss for monitoring.
+
+        Notes
+        -----
+        - y must be label encoded to integers 0..K-1 before calling fit.
         """
         # Determine number of classes
         if self.n_classes is None:
@@ -171,9 +174,6 @@ class SoftmaxRegression(BaseClassifier):
         else:
             # Zero initialization
             self.weights = np.zeros((self.n_classes, X_bias.shape[1]))
-
-        # One-hot encode labels
-        Y_one_hot = self._one_hot(y, self.n_classes)
 
         if self.verbose:
             print("Starting training...")
