@@ -185,14 +185,14 @@ class SoftmaxRegression(BaseClassifier):
                 probs = self._softmax(Z)  # shape (n_samples, n_classes)
 
                 # Compute the error
-                error = Y_one_hot - probs  # shape (n_samples, n_classes)
+                error = y - probs  # shape (n_samples, n_classes)
 
                 # Compute gradient and update weights
                 gradient = (error.T @ X_bias) / X_bias.shape[0]  # shape (n_classes, n_features + 1)
                 self.weights += self.lr * gradient  # Update weights
 
                 # Compute loss for monitoring
-                loss = self._compute_loss(Y_one_hot, probs)
+                loss = self._compute_loss(y, probs)
                 self.loss_history.append(loss) # Store loss in history
 
                 if epoch % 10 == 0 or epoch == self.max_iter - 1:
