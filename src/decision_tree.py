@@ -25,10 +25,14 @@ class ID3DecisionTree(BaseClassifier):
     # --- TRAINING ---
     def fit(self, X, y, feature_names=None):
 
-        # 1. PERSIAPAN DATA (Data Preprocessing)
-        X = pd.DataFrame(X).copy()
+        if isinstance(X, pd.DataFrame):
+            if feature_names is None: feature_names = X.columns.tolist()
+            X_df = X.copy()
+        else:
+            X_df = pd.DataFrame(X)
+        
         y = np.array(y)
-
+        
         for col in X_df.columns:
             if X_df[col].isnull().any():
                 if pd.api.types.is_numeric_dtype(X_df[col]): X_df[col] = X_df[col].fillna(X_df[col].mean())
