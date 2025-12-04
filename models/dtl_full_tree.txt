@@ -1,0 +1,1031 @@
+[PC3]
+├── (<=) [PC3]
+│   ├── (<=) [PC3]
+│   │   ├── (<=) [PC3]
+│   │   │   ├── (<=) [PC3]
+│   │   │   │   ├── (<=) [PC1]
+│   │   │   │   │   ├── (<=) [PC1]
+│   │   │   │   │   │   ├── (<=) Output: Graduate
+│   │   │   │   │   │   └── (>) Output: Enrolled
+│   │   │   │   │   └── (>) [PC7]
+│   │   │   │   │       ├── (<=) [PC7]
+│   │   │   │   │       │   ├── (<=) [PC5]
+│   │   │   │   │       │   │   ├── (<=) Output: Graduate
+│   │   │   │   │       │   │   └── (>) Output: Dropout
+│   │   │   │   │       │   └── (>) [PC4]
+│   │   │   │   │       │       ├── (<=) [PC1]
+│   │   │   │   │       │       │   ├── (<=) Output: Dropout
+│   │   │   │   │       │       │   └── (>) Output: Enrolled
+│   │   │   │   │       │       └── (>) [PC5]
+│   │   │   │   │       │           ├── (<=) Output: Graduate
+│   │   │   │   │       │           └── (>) [PC5]
+│   │   │   │   │       │               ├── (<=) [PC3]
+│   │   │   │   │       │               │   ├── (<=) [PC1]
+│   │   │   │   │       │               │   │   ├── (<=) [PC2]
+│   │   │   │   │       │               │   │   │   ├── (<=) Output: Dropout
+│   │   │   │   │       │               │   │   │   └── (>) Output: Enrolled
+│   │   │   │   │       │               │   │   └── (>) Output: Graduate
+│   │   │   │   │       │               │   └── (>) Output: Dropout
+│   │   │   │   │       │               └── (>) [PC4]
+│   │   │   │   │       │                   ├── (<=) Output: Dropout
+│   │   │   │   │       │                   └── (>) [PC6]
+│   │   │   │   │       │                       ├── (<=) Output: Enrolled
+│   │   │   │   │       │                       └── (>) [PC2]
+│   │   │   │   │       │                           ├── (<=) Output: Graduate
+│   │   │   │   │       │                           └── (>) Output: Enrolled
+│   │   │   │   │       └── (>) Output: Dropout
+│   │   │   │   └── (>) [PC7]
+│   │   │   │       ├── (<=) [PC1]
+│   │   │   │       │   ├── (<=) [PC6]
+│   │   │   │       │   │   ├── (<=) [PC2]
+│   │   │   │       │   │   │   ├── (<=) [PC6]
+│   │   │   │       │   │   │   │   ├── (<=) Output: Graduate
+│   │   │   │       │   │   │   │   └── (>) Output: Graduate
+│   │   │   │       │   │   │   └── (>) Output: Dropout
+│   │   │   │       │   │   └── (>) Output: Dropout
+│   │   │   │       │   └── (>) [PC3]
+│   │   │   │       │       ├── (<=) Output: Dropout
+│   │   │   │       │       └── (>) Output: Graduate
+│   │   │   │       └── (>) [PC3]
+│   │   │   │           ├── (<=) Output: Enrolled
+│   │   │   │           └── (>) Output: Dropout
+│   │   │   └── (>) [PC4]
+│   │   │       ├── (<=) Output: Graduate
+│   │   │       └── (>) Output: Dropout
+│   │   └── (>) [PC6]
+│   │       ├── (<=) [PC2]
+│   │       │   ├── (<=) [PC1]
+│   │       │   │   ├── (<=) [PC6]
+│   │       │   │   │   ├── (<=) [PC1]
+│   │       │   │   │   │   ├── (<=) Output: Dropout
+│   │       │   │   │   │   └── (>) [PC1]
+│   │       │   │   │   │       ├── (<=) Output: Dropout
+│   │       │   │   │   │       └── (>) Output: Enrolled
+│   │       │   │   │   └── (>) [PC4]
+│   │       │   │   │       ├── (<=) [PC2]
+│   │       │   │   │       │   ├── (<=) Output: Dropout
+│   │       │   │   │       │   └── (>) Output: Dropout
+│   │       │   │   │       └── (>) Output: Enrolled
+│   │       │   │   └── (>) Output: Dropout
+│   │       │   └── (>) [PC3]
+│   │       │       ├── (<=) [PC1]
+│   │       │       │   ├── (<=) [PC2]
+│   │       │       │   │   ├── (<=) Output: Enrolled
+│   │       │       │   │   └── (>) Output: Dropout
+│   │       │       │   └── (>) Output: Dropout
+│   │       │       └── (>) [PC4]
+│   │       │           ├── (<=) [PC7]
+│   │       │           │   ├── (<=) Output: Dropout
+│   │       │           │   └── (>) [PC5]
+│   │       │           │       ├── (<=) Output: Enrolled
+│   │       │           │       └── (>) [PC5]
+│   │       │           │           ├── (<=) Output: Dropout
+│   │       │           │           └── (>) Output: Enrolled
+│   │       │           └── (>) [PC4]
+│   │       │               ├── (<=) [PC7]
+│   │       │               │   ├── (<=) [PC5]
+│   │       │               │   │   ├── (<=) Output: Dropout
+│   │       │               │   │   └── (>) [PC2]
+│   │       │               │   │       ├── (<=) [PC6]
+│   │       │               │   │       │   ├── (<=) [PC6]
+│   │       │               │   │       │   │   ├── (<=) Output: Dropout
+│   │       │               │   │       │   │   └── (>) [PC5]
+│   │       │               │   │       │   │       ├── (<=) [PC1]
+│   │       │               │   │       │   │       │   ├── (<=) Output: Enrolled
+│   │       │               │   │       │   │       │   └── (>) Output: Dropout
+│   │       │               │   │       │   │       └── (>) Output: Dropout
+│   │       │               │   │       │   └── (>) Output: Dropout
+│   │       │               │   │       └── (>) Output: Enrolled
+│   │       │               │   └── (>) [PC6]
+│   │       │               │       ├── (<=) [PC1]
+│   │       │               │       │   ├── (<=) Output: Enrolled
+│   │       │               │       │   └── (>) [PC6]
+│   │       │               │       │       ├── (<=) Output: Enrolled
+│   │       │               │       │       └── (>) Output: Dropout
+│   │       │               │       └── (>) Output: Enrolled
+│   │       │               └── (>) Output: Dropout
+│   │       └── (>) [PC2]
+│   │           ├── (<=) [PC1]
+│   │           │   ├── (<=) Output: Enrolled
+│   │           │   └── (>) Output: Dropout
+│   │           └── (>) [PC7]
+│   │               ├── (<=) [PC2]
+│   │               │   ├── (<=) Output: Dropout
+│   │               │   └── (>) [PC1]
+│   │               │       ├── (<=) Output: Dropout
+│   │               │       └── (>) Output: Enrolled
+│   │               └── (>) Output: Enrolled
+│   └── (>) [PC4]
+│       ├── (<=) [PC4]
+│       │   ├── (<=) [PC6]
+│       │   │   ├── (<=) [PC7]
+│       │   │   │   ├── (<=) [PC4]
+│       │   │   │   │   ├── (<=) [PC1]
+│       │   │   │   │   │   ├── (<=) Output: Enrolled
+│       │   │   │   │   │   └── (>) Output: Graduate
+│       │   │   │   │   └── (>) [PC6]
+│       │   │   │   │       ├── (<=) [PC3]
+│       │   │   │   │       │   ├── (<=) [PC7]
+│       │   │   │   │       │   │   ├── (<=) Output: Enrolled
+│       │   │   │   │       │   │   └── (>) Output: Dropout
+│       │   │   │   │       │   └── (>) [PC5]
+│       │   │   │   │       │       ├── (<=) Output: Enrolled
+│       │   │   │   │       │       └── (>) Output: Dropout
+│       │   │   │   │       └── (>) Output: Enrolled
+│       │   │   │   └── (>) [PC3]
+│       │   │   │       ├── (<=) [PC2]
+│       │   │   │       │   ├── (<=) Output: Dropout
+│       │   │   │       │   └── (>) [PC1]
+│       │   │   │       │       ├── (<=) Output: Enrolled
+│       │   │   │       │       └── (>) Output: Dropout
+│       │   │   │       └── (>) [PC7]
+│       │   │   │           ├── (<=) [PC3]
+│       │   │   │           │   ├── (<=) [PC7]
+│       │   │   │           │   │   ├── (<=) Output: Graduate
+│       │   │   │           │   │   └── (>) [PC4]
+│       │   │   │           │   │       ├── (<=) [PC2]
+│       │   │   │           │   │       │   ├── (<=) Output: Enrolled
+│       │   │   │           │   │       │   └── (>) [PC3]
+│       │   │   │           │   │       │       ├── (<=) Output: Dropout
+│       │   │   │           │   │       │       └── (>) [PC2]
+│       │   │   │           │   │       │           ├── (<=) [PC4]
+│       │   │   │           │   │       │           │   ├── (<=) Output: Graduate
+│       │   │   │           │   │       │           │   └── (>) Output: Enrolled
+│       │   │   │           │   │       │           └── (>) Output: Dropout
+│       │   │   │           │   │       └── (>) [PC7]
+│       │   │   │           │   │           ├── (<=) Output: Enrolled
+│       │   │   │           │   │           └── (>) [PC6]
+│       │   │   │           │   │               ├── (<=) Output: Graduate
+│       │   │   │           │   │               └── (>) [PC5]
+│       │   │   │           │   │                   ├── (<=) Output: Graduate
+│       │   │   │           │   │                   └── (>) Output: Enrolled
+│       │   │   │           │   └── (>) [PC4]
+│       │   │   │           │       ├── (<=) Output: Graduate
+│       │   │   │           │       └── (>) Output: Dropout
+│       │   │   │           └── (>) [PC5]
+│       │   │   │               ├── (<=) Output: Graduate
+│       │   │   │               └── (>) [PC1]
+│       │   │   │                   ├── (<=) [PC1]
+│       │   │   │                   │   ├── (<=) [PC2]
+│       │   │   │                   │   │   ├── (<=) Output: Graduate
+│       │   │   │                   │   │   └── (>) Output: Enrolled
+│       │   │   │                   │   └── (>) Output: Graduate
+│       │   │   │                   └── (>) [PC1]
+│       │   │   │                       ├── (<=) Output: Enrolled
+│       │   │   │                       └── (>) Output: Enrolled
+│       │   │   └── (>) [PC5]
+│       │   │       ├── (<=) [PC7]
+│       │   │       │   ├── (<=) [PC2]
+│       │   │       │   │   ├── (<=) Output: Dropout
+│       │   │       │   │   └── (>) [PC3]
+│       │   │       │   │       ├── (<=) Output: Dropout
+│       │   │       │   │       └── (>) Output: Enrolled
+│       │   │       │   └── (>) [PC4]
+│       │   │       │       ├── (<=) Output: Enrolled
+│       │   │       │       └── (>) Output: Dropout
+│       │   │       └── (>) [PC3]
+│       │   │           ├── (<=) Output: Dropout
+│       │   │           └── (>) Output: Graduate
+│       │   └── (>) [PC3]
+│       │       ├── (<=) [PC2]
+│       │       │   ├── (<=) Output: Enrolled
+│       │       │   └── (>) [PC1]
+│       │       │       ├── (<=) [PC7]
+│       │       │       │   ├── (<=) [PC3]
+│       │       │       │   │   ├── (<=) [PC4]
+│       │       │       │   │   │   ├── (<=) [PC5]
+│       │       │       │   │   │   │   ├── (<=) Output: Enrolled
+│       │       │       │   │   │   │   └── (>) Output: Enrolled
+│       │       │       │   │   │   └── (>) [PC1]
+│       │       │       │   │   │       ├── (<=) [PC6]
+│       │       │       │   │   │       │   ├── (<=) Output: Dropout
+│       │       │       │   │   │       │   └── (>) Output: Enrolled
+│       │       │       │   │   │       └── (>) [PC2]
+│       │       │       │   │   │           ├── (<=) Output: Enrolled
+│       │       │       │   │   │           └── (>) Output: Dropout
+│       │       │       │   │   └── (>) Output: Enrolled
+│       │       │       │   └── (>) [PC3]
+│       │       │       │       ├── (<=) Output: Enrolled
+│       │       │       │       └── (>) Output: Dropout
+│       │       │       └── (>) [PC1]
+│       │       │           ├── (<=) [PC5]
+│       │       │           │   ├── (<=) [PC2]
+│       │       │           │   │   ├── (<=) Output: Enrolled
+│       │       │           │   │   └── (>) Output: Dropout
+│       │       │           │   └── (>) Output: Dropout
+│       │       │           └── (>) Output: Dropout
+│       │       └── (>) [PC7]
+│       │           ├── (<=) [PC5]
+│       │           │   ├── (<=) [PC3]
+│       │           │   │   ├── (<=) Output: Enrolled
+│       │           │   │   └── (>) Output: Dropout
+│       │           │   └── (>) [PC5]
+│       │           │       ├── (<=) [PC2]
+│       │           │       │   ├── (<=) [PC2]
+│       │           │       │   │   ├── (<=) Output: Graduate
+│       │           │       │   │   └── (>) [PC1]
+│       │           │       │   │       ├── (<=) Output: Graduate
+│       │           │       │   │       └── (>) [PC5]
+│       │           │       │   │           ├── (<=) [PC1]
+│       │           │       │   │           │   ├── (<=) Output: Graduate
+│       │           │       │   │           │   └── (>) Output: Enrolled
+│       │           │       │   │           └── (>) [PC7]
+│       │           │       │   │               ├── (<=) [PC3]
+│       │           │       │   │               │   ├── (<=) [PC3]
+│       │           │       │   │               │   │   ├── (<=) [PC4]
+│       │           │       │   │               │   │   │   ├── (<=) Output: Enrolled
+│       │           │       │   │               │   │   │   └── (>) Output: Graduate
+│       │           │       │   │               │   │   └── (>) Output: Dropout
+│       │           │       │   │               │   └── (>) [PC7]
+│       │           │       │   │               │       ├── (<=) Output: Dropout
+│       │           │       │   │               │       └── (>) Output: Enrolled
+│       │           │       │   │               └── (>) Output: Graduate
+│       │           │       │   └── (>) [PC2]
+│       │           │       │       ├── (<=) [PC3]
+│       │           │       │       │   ├── (<=) Output: Dropout
+│       │           │       │       │   └── (>) Output: Enrolled
+│       │           │       │       └── (>) Output: Graduate
+│       │           │       └── (>) [PC6]
+│       │           │           ├── (<=) Output: Enrolled
+│       │           │           └── (>) Output: Dropout
+│       │           └── (>) [PC1]
+│       │               ├── (<=) Output: Enrolled
+│       │               └── (>) [PC5]
+│       │                   ├── (<=) Output: Enrolled
+│       │                   └── (>) [PC4]
+│       │                       ├── (<=) [PC1]
+│       │                       │   ├── (<=) [PC4]
+│       │                       │   │   ├── (<=) Output: Dropout
+│       │                       │   │   └── (>) Output: Enrolled
+│       │                       │   └── (>) [PC1]
+│       │                       │       ├── (<=) Output: Enrolled
+│       │                       │       └── (>) [PC2]
+│       │                       │           ├── (<=) Output: Dropout
+│       │                       │           └── (>) Output: Enrolled
+│       │                       └── (>) Output: Enrolled
+│       └── (>) [PC4]
+│           ├── (<=) [PC3]
+│           │   ├── (<=) [PC5]
+│           │   │   ├── (<=) [PC1]
+│           │   │   │   ├── (<=) [PC5]
+│           │   │   │   │   ├── (<=) [PC4]
+│           │   │   │   │   │   ├── (<=) Output: Enrolled
+│           │   │   │   │   │   └── (>) Output: Dropout
+│           │   │   │   │   └── (>) Output: Enrolled
+│           │   │   │   └── (>) [PC1]
+│           │   │   │       ├── (<=) Output: Dropout
+│           │   │   │       └── (>) [PC1]
+│           │   │   │           ├── (<=) Output: Enrolled
+│           │   │   │           └── (>) Output: Dropout
+│           │   │   └── (>) [PC3]
+│           │   │       ├── (<=) [PC2]
+│           │   │       │   ├── (<=) Output: Enrolled
+│           │   │       │   └── (>) Output: Dropout
+│           │   │       └── (>) Output: Dropout
+│           │   └── (>) [PC7]
+│           │       ├── (<=) Output: Enrolled
+│           │       └── (>) Output: Graduate
+│           └── (>) [PC3]
+│               ├── (<=) [PC6]
+│               │   ├── (<=) [PC5]
+│               │   │   ├── (<=) Output: Enrolled
+│               │   │   └── (>) Output: Dropout
+│               │   └── (>) Output: Dropout
+│               └── (>) Output: Dropout
+└── (>) [PC4]
+    ├── (<=) [PC3]
+    │   ├── (<=) [PC1]
+    │   │   ├── (<=) [PC7]
+    │   │   │   ├── (<=) [PC2]
+    │   │   │   │   ├── (<=) Output: Graduate
+    │   │   │   │   └── (>) Output: Graduate
+    │   │   │   └── (>) Output: Enrolled
+    │   │   └── (>) [PC2]
+    │   │       ├── (<=) [PC3]
+    │   │       │   ├── (<=) [PC6]
+    │   │       │   │   ├── (<=) [PC4]
+    │   │       │   │   │   ├── (<=) Output: Graduate
+    │   │       │   │   │   └── (>) [PC6]
+    │   │       │   │   │       ├── (<=) Output: Graduate
+    │   │       │   │   │       └── (>) [PC2]
+    │   │       │   │   │           ├── (<=) Output: Graduate
+    │   │       │   │   │           └── (>) [PC3]
+    │   │       │   │   │               ├── (<=) Output: Graduate
+    │   │       │   │   │               └── (>) [PC4]
+    │   │       │   │   │                   ├── (<=) Output: Enrolled
+    │   │       │   │   │                   └── (>) Output: Graduate
+    │   │       │   │   └── (>) [PC5]
+    │   │       │   │       ├── (<=) [PC3]
+    │   │       │   │       │   ├── (<=) [PC6]
+    │   │       │   │       │   │   ├── (<=) [PC4]
+    │   │       │   │       │   │   │   ├── (<=) Output: Graduate
+    │   │       │   │       │   │   │   └── (>) Output: Enrolled
+    │   │       │   │       │   │   └── (>) [PC1]
+    │   │       │   │       │   │       ├── (<=) Output: Enrolled
+    │   │       │   │       │   │       └── (>) Output: Dropout
+    │   │       │   │       │   └── (>) [PC1]
+    │   │       │   │       │       ├── (<=) Output: Dropout
+    │   │       │   │       │       └── (>) [PC6]
+    │   │       │   │       │           ├── (<=) Output: Dropout
+    │   │       │   │       │           └── (>) Output: Graduate
+    │   │       │   │       └── (>) [PC5]
+    │   │       │   │           ├── (<=) Output: Enrolled
+    │   │       │   │           └── (>) Output: Enrolled
+    │   │       │   └── (>) [PC5]
+    │   │       │       ├── (<=) [PC2]
+    │   │       │       │   ├── (<=) [PC1]
+    │   │       │       │   │   ├── (<=) Output: Enrolled
+    │   │       │       │   │   └── (>) Output: Graduate
+    │   │       │       │   └── (>) Output: Enrolled
+    │   │       │       └── (>) [PC1]
+    │   │       │           ├── (<=) [PC3]
+    │   │       │           │   ├── (<=) Output: Graduate
+    │   │       │           │   └── (>) Output: Enrolled
+    │   │       │           └── (>) [PC2]
+    │   │       │               ├── (<=) Output: Enrolled
+    │   │       │               └── (>) [PC3]
+    │   │       │                   ├── (<=) Output: Enrolled
+    │   │       │                   └── (>) [PC7]
+    │   │       │                       ├── (<=) [PC5]
+    │   │       │                       │   ├── (<=) Output: Enrolled
+    │   │       │                       │   └── (>) Output: Graduate
+    │   │       │                       └── (>) Output: Enrolled
+    │   │       └── (>) [PC1]
+    │   │           ├── (<=) [PC1]
+    │   │           │   ├── (<=) [PC4]
+    │   │           │   │   ├── (<=) Output: Enrolled
+    │   │           │   │   └── (>) Output: Graduate
+    │   │           │   └── (>) [PC4]
+    │   │           │       ├── (<=) [PC4]
+    │   │           │       │   ├── (<=) [PC7]
+    │   │           │       │   │   ├── (<=) Output: Graduate
+    │   │           │       │   │   └── (>) Output: Enrolled
+    │   │           │       │   └── (>) Output: Graduate
+    │   │           │       └── (>) Output: Enrolled
+    │   │           └── (>) [PC4]
+    │   │               ├── (<=) [PC1]
+    │   │               │   ├── (<=) Output: Graduate
+    │   │               │   └── (>) Output: Dropout
+    │   │               └── (>) [PC5]
+    │   │                   ├── (<=) [PC6]
+    │   │                   │   ├── (<=) Output: Dropout
+    │   │                   │   └── (>) [PC2]
+    │   │                   │       ├── (<=) [PC1]
+    │   │                   │       │   ├── (<=) Output: Enrolled
+    │   │                   │       │   └── (>) Output: Graduate
+    │   │                   │       └── (>) [PC5]
+    │   │                   │           ├── (<=) Output: Graduate
+    │   │                   │           └── (>) Output: Dropout
+    │   │                   └── (>) [PC7]
+    │   │                       ├── (<=) Output: Graduate
+    │   │                       └── (>) Output: Enrolled
+    │   └── (>) [PC3]
+    │       ├── (<=) [PC4]
+    │       │   ├── (<=) [PC3]
+    │       │   │   ├── (<=) [PC7]
+    │       │   │   │   ├── (<=) [PC3]
+    │       │   │   │   │   ├── (<=) Output: Graduate
+    │       │   │   │   │   └── (>) [PC7]
+    │       │   │   │   │       ├── (<=) Output: Dropout
+    │       │   │   │   │       └── (>) [PC1]
+    │       │   │   │   │           ├── (<=) Output: Dropout
+    │       │   │   │   │           └── (>) [PC3]
+    │       │   │   │   │               ├── (<=) Output: Enrolled
+    │       │   │   │   │               └── (>) [PC1]
+    │       │   │   │   │                   ├── (<=) Output: Graduate
+    │       │   │   │   │                   └── (>) Output: Graduate
+    │       │   │   │   └── (>) Output: Enrolled
+    │       │   │   └── (>) [PC3]
+    │       │   │       ├── (<=) [PC5]
+    │       │   │       │   ├── (<=) Output: Graduate
+    │       │   │       │   └── (>) [PC4]
+    │       │   │       │       ├── (<=) [PC1]
+    │       │   │       │       │   ├── (<=) Output: Graduate
+    │       │   │       │       │   └── (>) [PC1]
+    │       │   │       │       │       ├── (<=) Output: Dropout
+    │       │   │       │       │       └── (>) Output: Graduate
+    │       │   │       │       └── (>) [PC2]
+    │       │   │       │           ├── (<=) Output: Dropout
+    │       │   │       │           └── (>) [PC2]
+    │       │   │       │               ├── (<=) Output: Graduate
+    │       │   │       │               └── (>) Output: Graduate
+    │       │   │       └── (>) Output: Graduate
+    │       │   └── (>) [PC1]
+    │       │       ├── (<=) [PC4]
+    │       │       │   ├── (<=) [PC7]
+    │       │       │   │   ├── (<=) [PC4]
+    │       │       │   │   │   ├── (<=) [PC5]
+    │       │       │   │   │   │   ├── (<=) [PC4]
+    │       │       │   │   │   │   │   ├── (<=) Output: Enrolled
+    │       │       │   │   │   │   │   └── (>) [PC4]
+    │       │       │   │   │   │   │       ├── (<=) Output: Graduate
+    │       │       │   │   │   │   │       └── (>) [PC2]
+    │       │       │   │   │   │   │           ├── (<=) Output: Enrolled
+    │       │       │   │   │   │   │           └── (>) Output: Graduate
+    │       │       │   │   │   │   └── (>) [PC1]
+    │       │       │   │   │   │       ├── (<=) [PC4]
+    │       │       │   │   │   │       │   ├── (<=) Output: Graduate
+    │       │       │   │   │   │       │   └── (>) [PC5]
+    │       │       │   │   │   │       │       ├── (<=) [PC4]
+    │       │       │   │   │   │       │       │   ├── (<=) [PC2]
+    │       │       │   │   │   │       │       │   │   ├── (<=) [PC6]
+    │       │       │   │   │   │       │       │   │   │   ├── (<=) Output: Graduate
+    │       │       │   │   │   │       │       │   │   │   └── (>) Output: Enrolled
+    │       │       │   │   │   │       │       │   │   └── (>) [PC1]
+    │       │       │   │   │   │       │       │   │       ├── (<=) Output: Enrolled
+    │       │       │   │   │   │       │       │   │       └── (>) Output: Graduate
+    │       │       │   │   │   │       │       │   └── (>) Output: Graduate
+    │       │       │   │   │   │       │       └── (>) [PC7]
+    │       │       │   │   │   │       │           ├── (<=) Output: Graduate
+    │       │       │   │   │   │       │           └── (>) [PC4]
+    │       │       │   │   │   │       │               ├── (<=) Output: Graduate
+    │       │       │   │   │   │       │               └── (>) [PC2]
+    │       │       │   │   │   │       │                   ├── (<=) [PC5]
+    │       │       │   │   │   │       │                   │   ├── (<=) Output: Enrolled
+    │       │       │   │   │   │       │                   │   └── (>) Output: Graduate
+    │       │       │   │   │   │       │                   └── (>) Output: Graduate
+    │       │       │   │   │   │       └── (>) [PC6]
+    │       │       │   │   │   │           ├── (<=) [PC7]
+    │       │       │   │   │   │           │   ├── (<=) Output: Graduate
+    │       │       │   │   │   │           │   └── (>) Output: Graduate
+    │       │       │   │   │   │           └── (>) Output: Enrolled
+    │       │       │   │   │   └── (>) [PC5]
+    │       │       │   │   │       ├── (<=) [PC5]
+    │       │       │   │   │       │   ├── (<=) [PC3]
+    │       │       │   │   │       │   │   ├── (<=) Output: Enrolled
+    │       │       │   │   │       │   │   └── (>) Output: Graduate
+    │       │       │   │   │       │   └── (>) [PC2]
+    │       │       │   │   │       │       ├── (<=) [PC6]
+    │       │       │   │   │       │       │   ├── (<=) [PC4]
+    │       │       │   │   │       │       │   │   ├── (<=) Output: Dropout
+    │       │       │   │   │       │       │   │   └── (>) [PC2]
+    │       │       │   │   │       │       │   │       ├── (<=) Output: Graduate
+    │       │       │   │   │       │       │   │       └── (>) Output: Graduate
+    │       │       │   │   │       │       │   └── (>) [PC3]
+    │       │       │   │   │       │       │       ├── (<=) Output: Graduate
+    │       │       │   │   │       │       │       └── (>) Output: Enrolled
+    │       │       │   │   │       │       └── (>) [PC3]
+    │       │       │   │   │       │           ├── (<=) [PC4]
+    │       │       │   │   │       │           │   ├── (<=) Output: Dropout
+    │       │       │   │   │       │           │   └── (>) Output: Graduate
+    │       │       │   │   │       │           └── (>) [PC5]
+    │       │       │   │   │       │               ├── (<=) [PC2]
+    │       │       │   │   │       │               │   ├── (<=) [PC5]
+    │       │       │   │   │       │               │   │   ├── (<=) Output: Enrolled
+    │       │       │   │   │       │               │   │   └── (>) [PC6]
+    │       │       │   │   │       │               │   │       ├── (<=) [PC6]
+    │       │       │   │   │       │               │   │       │   ├── (<=) Output: Graduate
+    │       │       │   │   │       │               │   │       │   └── (>) [PC1]
+    │       │       │   │   │       │               │   │       │       ├── (<=) Output: Graduate
+    │       │       │   │   │       │               │   │       │       └── (>) Output: Enrolled
+    │       │       │   │   │       │               │   │       └── (>) Output: Graduate
+    │       │       │   │   │       │               │   └── (>) Output: Graduate
+    │       │       │   │   │       │               └── (>) Output: Graduate
+    │       │       │   │   │       └── (>) [PC6]
+    │       │       │   │   │           ├── (<=) [PC7]
+    │       │       │   │   │           │   ├── (<=) Output: Dropout
+    │       │       │   │   │           │   └── (>) [PC6]
+    │       │       │   │   │           │       ├── (<=) Output: Dropout
+    │       │       │   │   │           │       └── (>) Output: Graduate
+    │       │       │   │   │           └── (>) [PC3]
+    │       │       │   │   │               ├── (<=) [PC2]
+    │       │       │   │   │               │   ├── (<=) [PC5]
+    │       │       │   │   │               │   │   ├── (<=) [PC1]
+    │       │       │   │   │               │   │   │   ├── (<=) Output: Dropout
+    │       │       │   │   │               │   │   │   └── (>) Output: Enrolled
+    │       │       │   │   │               │   │   └── (>) Output: Graduate
+    │       │       │   │   │               │   └── (>) Output: Graduate
+    │       │       │   │   │               └── (>) [PC6]
+    │       │       │   │   │                   ├── (<=) [PC3]
+    │       │       │   │   │                   │   ├── (<=) Output: Graduate
+    │       │       │   │   │                   │   └── (>) [PC4]
+    │       │       │   │   │                   │       ├── (<=) Output: Enrolled
+    │       │       │   │   │                   │       └── (>) Output: Graduate
+    │       │       │   │   │                   └── (>) [PC2]
+    │       │       │   │   │                       ├── (<=) Output: Enrolled
+    │       │       │   │   │                       └── (>) Output: Graduate
+    │       │       │   │   └── (>) [PC6]
+    │       │       │   │       ├── (<=) Output: Graduate
+    │       │       │   │       └── (>) [PC2]
+    │       │       │   │           ├── (<=) Output: Dropout
+    │       │       │   │           └── (>) Output: Graduate
+    │       │       │   └── (>) [PC6]
+    │       │       │       ├── (<=) Output: Enrolled
+    │       │       │       └── (>) [PC6]
+    │       │       │           ├── (<=) [PC1]
+    │       │       │           │   ├── (<=) Output: Graduate
+    │       │       │           │   └── (>) [PC3]
+    │       │       │           │       ├── (<=) [PC7]
+    │       │       │           │       │   ├── (<=) Output: Enrolled
+    │       │       │           │       │   └── (>) Output: Graduate
+    │       │       │           │       └── (>) [PC1]
+    │       │       │           │           ├── (<=) Output: Dropout
+    │       │       │           │           └── (>) Output: Graduate
+    │       │       │           └── (>) [PC4]
+    │       │       │               ├── (<=) Output: Enrolled
+    │       │       │               └── (>) Output: Graduate
+    │       │       └── (>) [PC3]
+    │       │           ├── (<=) [PC3]
+    │       │           │   ├── (<=) [PC2]
+    │       │           │   │   ├── (<=) Output: Graduate
+    │       │           │   │   └── (>) Output: Graduate
+    │       │           │   └── (>) Output: Enrolled
+    │       │           └── (>) Output: Graduate
+    │       └── (>) [PC5]
+    │           ├── (<=) [PC1]
+    │           │   ├── (<=) [PC6]
+    │           │   │   ├── (<=) Output: Graduate
+    │           │   │   └── (>) [PC6]
+    │           │   │       ├── (<=) [PC5]
+    │           │   │       │   ├── (<=) Output: Graduate
+    │           │   │       │   └── (>) Output: Dropout
+    │           │   │       └── (>) Output: Graduate
+    │           │   └── (>) [PC1]
+    │           │       ├── (<=) [PC7]
+    │           │       │   ├── (<=) [PC1]
+    │           │       │   │   ├── (<=) Output: Dropout
+    │           │       │   │   └── (>) [PC6]
+    │           │       │   │       ├── (<=) [PC3]
+    │           │       │   │       │   ├── (<=) Output: Graduate
+    │           │       │   │       │   └── (>) [PC3]
+    │           │       │   │       │       ├── (<=) Output: Dropout
+    │           │       │   │       │       └── (>) Output: Graduate
+    │           │       │   │       └── (>) Output: Graduate
+    │           │       │   └── (>) Output: Graduate
+    │           │       └── (>) [PC5]
+    │           │           ├── (<=) Output: Graduate
+    │           │           └── (>) Output: Dropout
+    │           └── (>) [PC3]
+    │               ├── (<=) Output: Enrolled
+    │               └── (>) Output: Graduate
+    └── (>) [PC3]
+        ├── (<=) [PC4]
+        │   ├── (<=) [PC4]
+        │   │   ├── (<=) [PC6]
+        │   │   │   ├── (<=) [PC7]
+        │   │   │   │   ├── (<=) [PC3]
+        │   │   │   │   │   ├── (<=) [PC1]
+        │   │   │   │   │   │   ├── (<=) Output: Dropout
+        │   │   │   │   │   │   └── (>) Output: Dropout
+        │   │   │   │   │   └── (>) [PC1]
+        │   │   │   │   │       ├── (<=) [PC2]
+        │   │   │   │   │       │   ├── (<=) [PC1]
+        │   │   │   │   │       │   │   ├── (<=) [PC1]
+        │   │   │   │   │       │   │   │   ├── (<=) [PC3]
+        │   │   │   │   │       │   │   │   │   ├── (<=) Output: Enrolled
+        │   │   │   │   │       │   │   │   │   └── (>) Output: Graduate
+        │   │   │   │   │       │   │   │   └── (>) Output: Graduate
+        │   │   │   │   │       │   │   └── (>) Output: Enrolled
+        │   │   │   │   │       │   └── (>) [PC3]
+        │   │   │   │   │       │       ├── (<=) Output: Graduate
+        │   │   │   │   │       │       └── (>) [PC3]
+        │   │   │   │   │       │           ├── (<=) [PC4]
+        │   │   │   │   │       │           │   ├── (<=) Output: Dropout
+        │   │   │   │   │       │           │   └── (>) [PC2]
+        │   │   │   │   │       │           │       ├── (<=) Output: Dropout
+        │   │   │   │   │       │           │       └── (>) Output: Enrolled
+        │   │   │   │   │       │           └── (>) [PC4]
+        │   │   │   │   │       │               ├── (<=) Output: Enrolled
+        │   │   │   │   │       │               └── (>) Output: Graduate
+        │   │   │   │   │       └── (>) Output: Graduate
+        │   │   │   │   └── (>) [PC1]
+        │   │   │   │       ├── (<=) [PC1]
+        │   │   │   │       │   ├── (<=) Output: Graduate
+        │   │   │   │       │   └── (>) Output: Enrolled
+        │   │   │   │       └── (>) [PC1]
+        │   │   │   │           ├── (<=) [PC2]
+        │   │   │   │           │   ├── (<=) Output: Graduate
+        │   │   │   │           │   └── (>) Output: Dropout
+        │   │   │   │           └── (>) [PC4]
+        │   │   │   │               ├── (<=) [PC6]
+        │   │   │   │               │   ├── (<=) [PC6]
+        │   │   │   │               │   │   ├── (<=) Output: Enrolled
+        │   │   │   │               │   │   └── (>) [PC7]
+        │   │   │   │               │   │       ├── (<=) Output: Graduate
+        │   │   │   │               │   │       └── (>) Output: Graduate
+        │   │   │   │               │   └── (>) [PC2]
+        │   │   │   │               │       ├── (<=) [PC3]
+        │   │   │   │               │       │   ├── (<=) Output: Enrolled
+        │   │   │   │               │       │   └── (>) Output: Graduate
+        │   │   │   │               │       └── (>) Output: Graduate
+        │   │   │   │               └── (>) [PC6]
+        │   │   │   │                   ├── (<=) [PC2]
+        │   │   │   │                   │   ├── (<=) [PC2]
+        │   │   │   │                   │   │   ├── (<=) Output: Graduate
+        │   │   │   │                   │   │   └── (>) [PC1]
+        │   │   │   │                   │   │       ├── (<=) Output: Enrolled
+        │   │   │   │                   │   │       └── (>) Output: Graduate
+        │   │   │   │                   │   └── (>) Output: Dropout
+        │   │   │   │                   └── (>) [PC7]
+        │   │   │   │                       ├── (<=) [PC6]
+        │   │   │   │                       │   ├── (<=) [PC4]
+        │   │   │   │                       │   │   ├── (<=) Output: Enrolled
+        │   │   │   │                       │   │   └── (>) Output: Enrolled
+        │   │   │   │                       │   └── (>) Output: Dropout
+        │   │   │   │                       └── (>) Output: Dropout
+        │   │   │   └── (>) [PC5]
+        │   │   │       ├── (<=) [PC1]
+        │   │   │       │   ├── (<=) [PC3]
+        │   │   │       │   │   ├── (<=) Output: Enrolled
+        │   │   │       │   │   └── (>) [PC6]
+        │   │   │       │   │       ├── (<=) [PC1]
+        │   │   │       │   │       │   ├── (<=) [PC7]
+        │   │   │       │   │       │   │   ├── (<=) Output: Enrolled
+        │   │   │       │   │       │   │   └── (>) [PC1]
+        │   │   │       │   │       │   │       ├── (<=) [PC1]
+        │   │   │       │   │       │   │       │   ├── (<=) Output: Graduate
+        │   │   │       │   │       │   │       │   └── (>) Output: Graduate
+        │   │   │       │   │       │   │       └── (>) Output: Enrolled
+        │   │   │       │   │       │   └── (>) [PC2]
+        │   │   │       │   │       │       ├── (<=) [PC6]
+        │   │   │       │   │       │       │   ├── (<=) Output: Graduate
+        │   │   │       │   │       │       │   └── (>) [PC1]
+        │   │   │       │   │       │       │       ├── (<=) Output: Graduate
+        │   │   │       │   │       │       │       └── (>) [PC1]
+        │   │   │       │   │       │       │           ├── (<=) Output: Enrolled
+        │   │   │       │   │       │       │           └── (>) Output: Graduate
+        │   │   │       │   │       │       └── (>) [PC3]
+        │   │   │       │   │       │           ├── (<=) [PC2]
+        │   │   │       │   │       │           │   ├── (<=) Output: Dropout
+        │   │   │       │   │       │           │   └── (>) [PC7]
+        │   │   │       │   │       │           │       ├── (<=) Output: Dropout
+        │   │   │       │   │       │           │       └── (>) [PC4]
+        │   │   │       │   │       │           │           ├── (<=) Output: Enrolled
+        │   │   │       │   │       │           │           └── (>) Output: Graduate
+        │   │   │       │   │       │           └── (>) [PC4]
+        │   │   │       │   │       │               ├── (<=) Output: Graduate
+        │   │   │       │   │       │               └── (>) Output: Enrolled
+        │   │   │       │   │       └── (>) [PC1]
+        │   │   │       │   │           ├── (<=) Output: Enrolled
+        │   │   │       │   │           └── (>) Output: Dropout
+        │   │   │       │   └── (>) [PC1]
+        │   │   │       │       ├── (<=) Output: Enrolled
+        │   │   │       │       └── (>) Output: Graduate
+        │   │   │       └── (>) [PC2]
+        │   │   │           ├── (<=) [PC2]
+        │   │   │           │   ├── (<=) Output: Dropout
+        │   │   │           │   └── (>) Output: Enrolled
+        │   │   │           └── (>) [PC6]
+        │   │   │               ├── (<=) [PC1]
+        │   │   │               │   ├── (<=) Output: Dropout
+        │   │   │               │   └── (>) Output: Enrolled
+        │   │   │               └── (>) [PC1]
+        │   │   │                   ├── (<=) [PC4]
+        │   │   │                   │   ├── (<=) Output: Enrolled
+        │   │   │                   │   └── (>) Output: Graduate
+        │   │   │                   └── (>) Output: Dropout
+        │   │   └── (>) [PC2]
+        │   │       ├── (<=) [PC3]
+        │   │       │   ├── (<=) [PC2]
+        │   │       │   │   ├── (<=) Output: Dropout
+        │   │       │   │   └── (>) [PC6]
+        │   │       │   │       ├── (<=) [PC4]
+        │   │       │   │       │   ├── (<=) [PC2]
+        │   │       │   │       │   │   ├── (<=) [PC5]
+        │   │       │   │       │   │   │   ├── (<=) Output: Enrolled
+        │   │       │   │       │   │   │   └── (>) [PC2]
+        │   │       │   │       │   │   │       ├── (<=) [PC2]
+        │   │       │   │       │   │   │       │   ├── (<=) Output: Graduate
+        │   │       │   │       │   │   │       │   └── (>) Output: Enrolled
+        │   │       │   │       │   │   │       └── (>) Output: Graduate
+        │   │       │   │       │   │   └── (>) Output: Enrolled
+        │   │       │   │       │   └── (>) Output: Dropout
+        │   │       │   │       └── (>) [PC2]
+        │   │       │   │           ├── (<=) [PC5]
+        │   │       │   │           │   ├── (<=) [PC1]
+        │   │       │   │           │   │   ├── (<=) Output: Enrolled
+        │   │       │   │           │   │   └── (>) Output: Dropout
+        │   │       │   │           │   └── (>) Output: Enrolled
+        │   │       │   │           └── (>) Output: Graduate
+        │   │       │   └── (>) [PC7]
+        │   │       │       ├── (<=) [PC3]
+        │   │       │       │   ├── (<=) Output: Enrolled
+        │   │       │       │   └── (>) Output: Graduate
+        │   │       │       └── (>) [PC3]
+        │   │       │           ├── (<=) Output: Dropout
+        │   │       │           └── (>) [PC4]
+        │   │       │               ├── (<=) Output: Graduate
+        │   │       │               └── (>) [PC5]
+        │   │       │                   ├── (<=) Output: Enrolled
+        │   │       │                   └── (>) Output: Graduate
+        │   │       └── (>) [PC7]
+        │   │           ├── (<=) [PC5]
+        │   │           │   ├── (<=) [PC1]
+        │   │           │   │   ├── (<=) Output: Enrolled
+        │   │           │   │   └── (>) Output: Dropout
+        │   │           │   └── (>) [PC1]
+        │   │           │       ├── (<=) Output: Dropout
+        │   │           │       └── (>) Output: Enrolled
+        │   │           └── (>) [PC7]
+        │   │               ├── (<=) [PC6]
+        │   │               │   ├── (<=) [PC5]
+        │   │               │   │   ├── (<=) [PC1]
+        │   │               │   │   │   ├── (<=) [PC4]
+        │   │               │   │   │   │   ├── (<=) Output: Graduate
+        │   │               │   │   │   │   └── (>) [PC5]
+        │   │               │   │   │   │       ├── (<=) Output: Enrolled
+        │   │               │   │   │   │       └── (>) Output: Graduate
+        │   │               │   │   │   └── (>) [PC1]
+        │   │               │   │   │       ├── (<=) Output: Enrolled
+        │   │               │   │   │       └── (>) [PC4]
+        │   │               │   │   │           ├── (<=) Output: Graduate
+        │   │               │   │   │           └── (>) Output: Enrolled
+        │   │               │   │   └── (>) [PC1]
+        │   │               │   │       ├── (<=) [PC4]
+        │   │               │   │       │   ├── (<=) Output: Graduate
+        │   │               │   │       │   └── (>) Output: Enrolled
+        │   │               │   │       └── (>) [PC3]
+        │   │               │   │           ├── (<=) Output: Enrolled
+        │   │               │   │           └── (>) [PC3]
+        │   │               │   │               ├── (<=) [PC1]
+        │   │               │   │               │   ├── (<=) Output: Dropout
+        │   │               │   │               │   └── (>) [PC1]
+        │   │               │   │               │       ├── (<=) Output: Enrolled
+        │   │               │   │               │       └── (>) Output: Dropout
+        │   │               │   │               └── (>) Output: Enrolled
+        │   │               │   └── (>) [PC2]
+        │   │               │       ├── (<=) [PC1]
+        │   │               │       │   ├── (<=) Output: Dropout
+        │   │               │       │   └── (>) Output: Enrolled
+        │   │               │       └── (>) [PC4]
+        │   │               │           ├── (<=) [PC6]
+        │   │               │           │   ├── (<=) Output: Graduate
+        │   │               │           │   └── (>) Output: Graduate
+        │   │               │           └── (>) Output: Enrolled
+        │   │               └── (>) [PC7]
+        │   │                   ├── (<=) Output: Enrolled
+        │   │                   └── (>) [PC4]
+        │   │                       ├── (<=) Output: Enrolled
+        │   │                       └── (>) Output: Dropout
+        │   └── (>) [PC3]
+        │       ├── (<=) [PC6]
+        │       │   ├── (<=) Output: Enrolled
+        │       │   └── (>) [PC3]
+        │       │       ├── (<=) [PC5]
+        │       │       │   ├── (<=) [PC5]
+        │       │       │   │   ├── (<=) Output: Enrolled
+        │       │       │   │   └── (>) [PC4]
+        │       │       │   │       ├── (<=) [PC6]
+        │       │       │   │       │   ├── (<=) Output: Enrolled
+        │       │       │   │       │   └── (>) [PC5]
+        │       │       │   │       │       ├── (<=) Output: Dropout
+        │       │       │   │       │       └── (>) Output: Enrolled
+        │       │       │   │       └── (>) Output: Dropout
+        │       │       │   └── (>) [PC4]
+        │       │       │       ├── (<=) Output: Dropout
+        │       │       │       └── (>) Output: Dropout
+        │       │       └── (>) Output: Graduate
+        │       └── (>) [PC4]
+        │           ├── (<=) Output: Enrolled
+        │           └── (>) [PC6]
+        │               ├── (<=) [PC2]
+        │               │   ├── (<=) Output: Enrolled
+        │               │   └── (>) Output: Dropout
+        │               └── (>) Output: Enrolled
+        └── (>) [PC4]
+            ├── (<=) [PC4]
+            │   ├── (<=) [PC3]
+            │   │   ├── (<=) [PC1]
+            │   │   │   ├── (<=) [PC2]
+            │   │   │   │   ├── (<=) [PC5]
+            │   │   │   │   │   ├── (<=) Output: Enrolled
+            │   │   │   │   │   └── (>) Output: Graduate
+            │   │   │   │   └── (>) [PC4]
+            │   │   │   │       ├── (<=) [PC1]
+            │   │   │   │       │   ├── (<=) Output: Graduate
+            │   │   │   │       │   └── (>) Output: Graduate
+            │   │   │   │       └── (>) [PC2]
+            │   │   │   │           ├── (<=) Output: Dropout
+            │   │   │   │           └── (>) [PC4]
+            │   │   │   │               ├── (<=) Output: Dropout
+            │   │   │   │               └── (>) [PC6]
+            │   │   │   │                   ├── (<=) [PC2]
+            │   │   │   │                   │   ├── (<=) [PC1]
+            │   │   │   │                   │   │   ├── (<=) [PC2]
+            │   │   │   │                   │   │   │   ├── (<=) [PC2]
+            │   │   │   │                   │   │   │   │   ├── (<=) Output: Graduate
+            │   │   │   │                   │   │   │   │   └── (>) Output: Enrolled
+            │   │   │   │                   │   │   │   └── (>) Output: Graduate
+            │   │   │   │                   │   │   └── (>) [PC5]
+            │   │   │   │                   │   │       ├── (<=) Output: Dropout
+            │   │   │   │                   │   │       └── (>) Output: Graduate
+            │   │   │   │                   │   └── (>) [PC7]
+            │   │   │   │                   │       ├── (<=) Output: Graduate
+            │   │   │   │                   │       └── (>) Output: Enrolled
+            │   │   │   │                   └── (>) [PC4]
+            │   │   │   │                       ├── (<=) [PC4]
+            │   │   │   │                       │   ├── (<=) Output: Enrolled
+            │   │   │   │                       │   └── (>) Output: Graduate
+            │   │   │   │                       └── (>) [PC7]
+            │   │   │   │                           ├── (<=) Output: Dropout
+            │   │   │   │                           └── (>) [PC6]
+            │   │   │   │                               ├── (<=) [PC7]
+            │   │   │   │                               │   ├── (<=) [PC2]
+            │   │   │   │                               │   │   ├── (<=) Output: Graduate
+            │   │   │   │                               │   │   └── (>) [PC2]
+            │   │   │   │                               │   │       ├── (<=) Output: Enrolled
+            │   │   │   │                               │   │       └── (>) Output: Graduate
+            │   │   │   │                               │   └── (>) Output: Enrolled
+            │   │   │   │                               └── (>) [PC3]
+            │   │   │   │                                   ├── (<=) [PC3]
+            │   │   │   │                                   │   ├── (<=) Output: Graduate
+            │   │   │   │                                   │   └── (>) Output: Dropout
+            │   │   │   │                                   └── (>) Output: Graduate
+            │   │   │   └── (>) [PC2]
+            │   │   │       ├── (<=) Output: Enrolled
+            │   │   │       └── (>) Output: Graduate
+            │   │   └── (>) [PC2]
+            │   │       ├── (<=) [PC3]
+            │   │       │   ├── (<=) Output: Enrolled
+            │   │       │   └── (>) [PC4]
+            │   │       │       ├── (<=) Output: Graduate
+            │   │       │       └── (>) Output: Graduate
+            │   │       └── (>) [PC2]
+            │   │           ├── (<=) [PC4]
+            │   │           │   ├── (<=) Output: Dropout
+            │   │           │   └── (>) Output: Graduate
+            │   │           └── (>) Output: Graduate
+            │   └── (>) [PC3]
+            │       ├── (<=) [PC4]
+            │       │   ├── (<=) [PC3]
+            │       │   │   ├── (<=) [PC2]
+            │       │   │   │   ├── (<=) Output: Enrolled
+            │       │   │   │   └── (>) Output: Enrolled
+            │       │   │   └── (>) [PC7]
+            │       │   │       ├── (<=) Output: Enrolled
+            │       │   │       └── (>) [PC2]
+            │       │   │           ├── (<=) [PC5]
+            │       │   │           │   ├── (<=) Output: Graduate
+            │       │   │           │   └── (>) Output: Graduate
+            │       │   │           └── (>) [PC3]
+            │       │   │               ├── (<=) [PC4]
+            │       │   │               │   ├── (<=) [PC1]
+            │       │   │               │   │   ├── (<=) Output: Graduate
+            │       │   │               │   │   └── (>) Output: Enrolled
+            │       │   │               │   └── (>) [PC4]
+            │       │   │               │       ├── (<=) [PC4]
+            │       │   │               │       │   ├── (<=) [PC1]
+            │       │   │               │       │   │   ├── (<=) Output: Graduate
+            │       │   │               │       │   │   └── (>) Output: Enrolled
+            │       │   │               │       │   └── (>) Output: Graduate
+            │       │   │               │       └── (>) Output: Enrolled
+            │       │   │               └── (>) Output: Graduate
+            │       │   └── (>) [PC4]
+            │       │       ├── (<=) [PC7]
+            │       │       │   ├── (<=) Output: Dropout
+            │       │       │   └── (>) [PC5]
+            │       │       │       ├── (<=) [PC4]
+            │       │       │       │   ├── (<=) [PC3]
+            │       │       │       │   │   ├── (<=) [PC4]
+            │       │       │       │   │   │   ├── (<=) [PC6]
+            │       │       │       │   │   │   │   ├── (<=) [PC2]
+            │       │       │       │   │   │   │   │   ├── (<=) Output: Graduate
+            │       │       │       │   │   │   │   │   └── (>) Output: Dropout
+            │       │       │       │   │   │   │   └── (>) [PC6]
+            │       │       │       │   │   │   │       ├── (<=) [PC1]
+            │       │       │       │   │   │   │       │   ├── (<=) Output: Enrolled
+            │       │       │       │   │   │   │       │   └── (>) Output: Dropout
+            │       │       │       │   │   │   │       └── (>) [PC3]
+            │       │       │       │   │   │   │           ├── (<=) [PC1]
+            │       │       │       │   │   │   │           │   ├── (<=) Output: Graduate
+            │       │       │       │   │   │   │           │   └── (>) Output: Enrolled
+            │       │       │       │   │   │   │           └── (>) [PC1]
+            │       │       │       │   │   │   │               ├── (<=) [PC7]
+            │       │       │       │   │   │   │               │   ├── (<=) Output: Graduate
+            │       │       │       │   │   │   │               │   └── (>) [PC2]
+            │       │       │       │   │   │   │               │       ├── (<=) [PC2]
+            │       │       │       │   │   │   │               │       │   ├── (<=) Output: Graduate
+            │       │       │       │   │   │   │               │       │   └── (>) [PC2]
+            │       │       │       │   │   │   │               │       │       ├── (<=) Output: Enrolled
+            │       │       │       │   │   │   │               │       │       └── (>) Output: Graduate
+            │       │       │       │   │   │   │               │       └── (>) Output: Dropout
+            │       │       │       │   │   │   │               └── (>) Output: Graduate
+            │       │       │       │   │   │   └── (>) [PC4]
+            │       │       │       │   │   │       ├── (<=) [PC5]
+            │       │       │       │   │   │       │   ├── (<=) [PC7]
+            │       │       │       │   │   │       │   │   ├── (<=) [PC6]
+            │       │       │       │   │   │       │   │   │   ├── (<=) Output: Graduate
+            │       │       │       │   │   │       │   │   │   └── (>) [PC6]
+            │       │       │       │   │   │       │   │   │       ├── (<=) Output: Enrolled
+            │       │       │       │   │   │       │   │   │       └── (>) [PC7]
+            │       │       │       │   │   │       │   │   │           ├── (<=) Output: Enrolled
+            │       │       │       │   │   │       │   │   │           └── (>) Output: Graduate
+            │       │       │       │   │   │       │   │   └── (>) Output: Enrolled
+            │       │       │       │   │   │       │   └── (>) [PC3]
+            │       │       │       │   │   │       │       ├── (<=) Output: Dropout
+            │       │       │       │   │   │       │       └── (>) Output: Enrolled
+            │       │       │       │   │   │       └── (>) Output: Dropout
+            │       │       │       │   │   └── (>) [PC7]
+            │       │       │       │   │       ├── (<=) Output: Enrolled
+            │       │       │       │   │       └── (>) Output: Graduate
+            │       │       │       │   └── (>) [PC1]
+            │       │       │       │       ├── (<=) Output: Enrolled
+            │       │       │       │       └── (>) Output: Graduate
+            │       │       │       └── (>) [PC1]
+            │       │       │           ├── (<=) Output: Enrolled
+            │       │       │           └── (>) [PC2]
+            │       │       │               ├── (<=) Output: Enrolled
+            │       │       │               └── (>) Output: Graduate
+            │       │       └── (>) [PC1]
+            │       │           ├── (<=) [PC7]
+            │       │           │   ├── (<=) Output: Enrolled
+            │       │           │   └── (>) Output: Graduate
+            │       │           └── (>) Output: Dropout
+            │       └── (>) [PC7]
+            │           ├── (<=) [PC3]
+            │           │   ├── (<=) [PC2]
+            │           │   │   ├── (<=) Output: Enrolled
+            │           │   │   └── (>) [PC2]
+            │           │   │       ├── (<=) Output: Graduate
+            │           │   │       └── (>) [PC4]
+            │           │   │           ├── (<=) Output: Enrolled
+            │           │   │           └── (>) [PC6]
+            │           │   │               ├── (<=) Output: Graduate
+            │           │   │               └── (>) Output: Enrolled
+            │           │   └── (>) Output: Graduate
+            │           └── (>) [PC2]
+            │               ├── (<=) [PC6]
+            │               │   ├── (<=) Output: Graduate
+            │               │   └── (>) Output: Dropout
+            │               └── (>) Output: Graduate
+            └── (>) [PC3]
+                ├── (<=) [PC1]
+                │   ├── (<=) [PC7]
+                │   │   ├── (<=) Output: Enrolled
+                │   │   └── (>) [PC4]
+                │   │       ├── (<=) [PC7]
+                │   │       │   ├── (<=) Output: Enrolled
+                │   │       │   └── (>) [PC2]
+                │   │       │       ├── (<=) [PC4]
+                │   │       │       │   ├── (<=) Output: Dropout
+                │   │       │       │   └── (>) Output: Graduate
+                │   │       │       └── (>) Output: Dropout
+                │   │       └── (>) [PC2]
+                │   │           ├── (<=) [PC1]
+                │   │           │   ├── (<=) Output: Dropout
+                │   │           │   └── (>) Output: Enrolled
+                │   │           └── (>) [PC5]
+                │   │               ├── (<=) [PC7]
+                │   │               │   ├── (<=) Output: Enrolled
+                │   │               │   └── (>) Output: Dropout
+                │   │               └── (>) Output: Dropout
+                │   └── (>) [PC3]
+                │       ├── (<=) [PC4]
+                │       │   ├── (<=) Output: Enrolled
+                │       │   └── (>) [PC6]
+                │       │       ├── (<=) Output: Dropout
+                │       │       └── (>) Output: Dropout
+                │       └── (>) [PC4]
+                │           ├── (<=) [PC1]
+                │           │   ├── (<=) Output: Dropout
+                │           │   └── (>) Output: Graduate
+                │           └── (>) [PC7]
+                │               ├── (<=) [PC2]
+                │               │   ├── (<=) Output: Enrolled
+                │               │   └── (>) Output: Dropout
+                │               └── (>) [PC2]
+                │                   ├── (<=) Output: Graduate
+                │                   └── (>) Output: Enrolled
+                └── (>) [PC3]
+                    ├── (<=) [PC2]
+                    │   ├── (<=) [PC2]
+                    │   │   ├── (<=) [PC5]
+                    │   │   │   ├── (<=) Output: Graduate
+                    │   │   │   └── (>) [PC5]
+                    │   │   │       ├── (<=) Output: Enrolled
+                    │   │   │       └── (>) Output: Graduate
+                    │   │   └── (>) [PC7]
+                    │   │       ├── (<=) [PC5]
+                    │   │       │   ├── (<=) [PC5]
+                    │   │       │   │   ├── (<=) [PC3]
+                    │   │       │   │   │   ├── (<=) Output: Dropout
+                    │   │       │   │   │   └── (>) Output: Graduate
+                    │   │       │   │   └── (>) [PC2]
+                    │   │       │   │       ├── (<=) Output: Graduate
+                    │   │       │   │       └── (>) Output: Dropout
+                    │   │       │   └── (>) Output: Graduate
+                    │   │       └── (>) Output: Graduate
+                    │   └── (>) [PC7]
+                    │       ├── (<=) [PC4]
+                    │       │   ├── (<=) Output: Graduate
+                    │       │   └── (>) Output: Enrolled
+                    │       └── (>) [PC2]
+                    │           ├── (<=) [PC4]
+                    │           │   ├── (<=) [PC2]
+                    │           │   │   ├── (<=) [PC6]
+                    │           │   │   │   ├── (<=) Output: Enrolled
+                    │           │   │   │   └── (>) Output: Dropout
+                    │           │   │   └── (>) [PC1]
+                    │           │   │       ├── (<=) Output: Graduate
+                    │           │   │       └── (>) [PC4]
+                    │           │   │           ├── (<=) [PC3]
+                    │           │   │           │   ├── (<=) Output: Dropout
+                    │           │   │           │   └── (>) Output: Graduate
+                    │           │   │           └── (>) [PC5]
+                    │           │   │               ├── (<=) Output: Dropout
+                    │           │   │               └── (>) Output: Graduate
+                    │           │   └── (>) Output: Enrolled
+                    │           └── (>) [PC1]
+                    │               ├── (<=) Output: Dropout
+                    │               └── (>) Output: Enrolled
+                    └── (>) Output: Graduate

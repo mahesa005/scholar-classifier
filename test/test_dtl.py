@@ -9,6 +9,10 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(current_dir)
 sys.path.append(project_root)
 
+# [FIX] Tambahkan folder 'src' ke path secara eksplisit
+# Ini wajib agar 'from core.base_model' di dalam decision_tree.py bisa jalan
+sys.path.append(os.path.join(project_root, 'src'))
+
 from src.decision_tree import ID3DecisionTree
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score

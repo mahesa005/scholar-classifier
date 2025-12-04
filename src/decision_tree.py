@@ -4,7 +4,7 @@ import os
 from collections import Counter
 from core.base_model import BaseClassifier
 
-# --- 1. CLASS NODE ---
+# Node class untuk pohon keputusan
 class Node:
     def __init__(self, prediction=None):
         self.prediction = prediction
@@ -22,7 +22,7 @@ class ID3DecisionTree(BaseClassifier):
         self.feature_types = []
         self.feature_names = []
 
-    # --- TRAINING ---
+    # Melatih model pohon keputusan menggunakan algoritma ID3
     def fit(self, X, y, feature_names=None):
 
         if isinstance(X, pd.DataFrame):
@@ -33,6 +33,7 @@ class ID3DecisionTree(BaseClassifier):
         
         y = np.array(y)
         
+        # Menangani nilai yang hilang
         for col in X_df.columns:
             if X_df[col].isnull().any():
                 if pd.api.types.is_numeric_dtype(X_df[col]): X_df[col] = X_df[col].fillna(X_df[col].mean())
@@ -40,12 +41,14 @@ class ID3DecisionTree(BaseClassifier):
         
         X_vals = X_df.values
 
+        # Mendifinisikan tipe fitur
         self.feature_types = []
         n_features = X_vals.shape[1]
         for i in range(n_features):
             val = X_vals[0, i]
             self.feature_types.append('continuous' if isinstance(val, (int, float, np.number)) and not isinstance(val, str) else 'categorical')
 
+        # Menyimpan nama fitur
         self.feature_names = feature_names if feature_names else [f"feat_{i}" for i in range(n_features)]
         
         self.root = self._id3(X_vals, y, list(range(n_features)), depth=0)
@@ -58,19 +61,25 @@ class ID3DecisionTree(BaseClassifier):
         n_samples = X.shape[0]
         n_labels = len(np.unique(y))
 
+        # Ketika semua label sama
         if n_labels == 1: return Node(prediction=y[0])
+
+        # Ketika tidak ada atribut tersisa atau mencapai kedalaman maksimum
         hit_max = (self.max_depth is not None and depth >= self.max_depth)
         if len(attribute_indices) == 0 or hit_max or n_samples < self.min_samples_split:
             return Node(prediction=self._most_common_label(y))
 
+        # Memilih atribut terbaik untuk split
         best_feat, best_gain, best_thr = self._get_best_attribute(X, y, attribute_indices)
         if best_feat is None: return Node(prediction=self._most_common_label(y))
 
+        # Membuat node
         node = Node()
         node.feature_idx = best_feat
         node.feature_name = self.feature_names[best_feat]
         node.is_continuous = (self.feature_types[best_feat] == 'continuous')
 
+        # Membagi dataset dan merekursi
         if node.is_continuous:
             node.threshold = best_thr
             left_mask = X[:, best_feat] <= best_thr
@@ -106,8 +115,14 @@ class ID3DecisionTree(BaseClassifier):
 
     def _calc_gain_cat(self, y, X_col):
         parent_ent = self._entropy(y)
+
+        # Siapkan variabel
         n, child_ent_sum = len(y), 0
+
+        # Cari nilai unik anak
         vals, counts = np.unique(X_col, return_counts=True)
+
+        # Hitung entropi anak
         for val, count in zip(vals, counts):
             child_ent_sum += (count / n) * self._entropy(y[X_col == val])
         return parent_ent - child_ent_sum
@@ -115,8 +130,13 @@ class ID3DecisionTree(BaseClassifier):
     def _calc_gain_cont(self, y, X_col, thr):
         parent_ent = self._entropy(y)
         n = len(y)
+
+        #  Tentukan kubu kiri
         left = X_col <= thr
+
+        # Kalau hasil pemisahannya kosong
         if np.sum(left) == 0 or np.sum(~left) == 0: return 0
+        # Ambil label untuk masing-masing kubu
         y_l, y_r = y[left], y[~left]
         return parent_ent - ((len(y_l)/n)*self._entropy(y_l) + (len(y_r)/n)*self._entropy(y_r))
 
@@ -128,12 +148,18 @@ class ID3DecisionTree(BaseClassifier):
         return None if len(y) == 0 else Counter(y).most_common(1)[0][0]
 
     def _traverse(self, x, node):
+        # Jika mencapai daun
         if node.prediction is not None: return node.prediction
+
+        # Ambil nilai fitur untuk node saat ini
         val = x[node.feature_idx]
+
         if node.is_continuous:
             next_node = node.children.get('<=' if val <= node.threshold else '>')
         else:
             next_node = node.children.get(val)
+
+        # Jika nilai fitur tidak ada di cabang, ambil cabang pertama yang ada
         if next_node is None and node.children: next_node = list(node.children.values())[0]
         return self._traverse(x, next_node) if next_node else node.prediction
 
