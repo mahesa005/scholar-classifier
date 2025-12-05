@@ -13,12 +13,13 @@ class SoftmaxRegression(BaseClassifier):
       cross-entropy loss.
     """
     
-    def __init__(self, lr=0.1, max_iter=100, n_classes=None, verbose=False):
+    def __init__(self, lr=0.1, max_iter=100, n_classes=None, verbose=False, random_state=42):
         # Hyperparameters
         self.lr = lr
         self.max_iter = max_iter
         self.n_classes = n_classes
         self.verbose = verbose
+        self.random_state = random_state
 
         # Learned during training
         self.weights = None  # shape (n_features, n_features_with_bias)
@@ -142,10 +143,11 @@ class SoftmaxRegression(BaseClassifier):
         # Add bias term to input features
         X_bias = self._add_bias(X)
 
-        # Initialize weights
+        # Initialize weights with reproducible randomness
+        rng = np.random.default_rng(self.random_state)
         if random_weights:
             # Random small weights
-            self.weights = np.random.randn(self.n_classes, X_bias.shape[1]) * 0.01
+            self.weights = rng.standard_normal((self.n_classes, X_bias.shape[1])) * 0.01
         else:
             # Zero initialization
             self.weights = np.zeros((self.n_classes, X_bias.shape[1]))
