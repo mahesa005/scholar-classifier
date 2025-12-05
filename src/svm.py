@@ -1,16 +1,20 @@
 import numpy as np
 from cvxopt import matrix, solvers
 import numpy as np
-from core.base_model import BaseClassifier
+from src.core.base_model import BaseClassifier
 
-class SVM_RBF_QP(BaseClassifier):
-    def __init__(self, C=1.0, gamma=0.1):
+class SVM_QP(BaseClassifier):
+    def __init__(self, C=1.0, gamma=0.1, kernel='rbf'):
         self.C = C
         self.gamma = gamma
+        self.kernel = kernel
         self.alphas = None
         self.support_vectors = None
         self.support_vector_labels = None
         self.b = 0
+
+    def linear_kernel(self, X1, X2):
+        return np.dot(X1, X2.T)
 
     def rbf_kernel(self, X1, X2):
         # Menggunakan Euclidean distance squared
@@ -25,11 +29,24 @@ class SVM_RBF_QP(BaseClassifier):
         return K
 
     def fit(self, X, y):
+
+        # Konversi ke numpy array jika dia DataFrame
+        if hasattr(X, 'values'):
+            X = X.values 
+        
+        if hasattr(y, 'values'):
+            y = y.values
+
         n_samples, n_features = X.shape
         y = y.astype(float).reshape(-1, 1) 
         
         # Matriks Gram (Kernel Matrix)
-        K = self.rbf_kernel(X, X)
+        if self.kernel == 'linear':
+            K = self.linear_kernel(X, X)
+        elif self.kernel == 'rbf':
+            K = self.rbf_kernel(X, X)
+        else:
+            raise ValueError(f"Unknown kernel: {self.kernel}")
         
         # Matriks P, q, G, h, A, b untuk CVXOPT
         # P = outer_product(y) * K
@@ -72,7 +89,11 @@ class SVM_RBF_QP(BaseClassifier):
         for i in range(len(self.alphas)):
             pred_val = 0
             for j in range(len(self.alphas)):
-                pred_val += self.alphas[j] * self.support_vector_labels[j] * np.exp(-self.gamma * np.linalg.norm(self.support_vectors[j] - self.support_vectors[i])**2)
+                if self.kernel == 'linear':
+                    k_val = np.dot(self.support_vectors[j], self.support_vectors[i])
+                else:  # rbf
+                    k_val = np.exp(-self.gamma * np.linalg.norm(self.support_vectors[j] - self.support_vectors[i])**2)
+                pred_val += self.alphas[j] * self.support_vector_labels[j] * k_val
             
             bias_list.append(self.support_vector_labels[i] - pred_val)
             
@@ -86,7 +107,10 @@ class SVM_RBF_QP(BaseClassifier):
             prediction = 0
             for i in range(len(self.alphas)):
                 # Kernel antara data baru (x) dan support vector (sv)
-                k_val = np.exp(-self.gamma * np.linalg.norm(self.support_vectors[i] - x)**2)
+                if self.kernel == 'linear':
+                    k_val = np.dot(self.support_vectors[i], x)
+                else:  # rbf
+                    k_val = np.exp(-self.gamma * np.linalg.norm(self.support_vectors[i] - x)**2)
                 prediction += self.alphas[i] * self.support_vector_labels[i] * k_val
             
             prediction += self.b
@@ -95,9 +119,10 @@ class SVM_RBF_QP(BaseClassifier):
         return np.array(y_pred)
 
 class DAGSVM(BaseClassifier):
-    def __init__ (self, C=1.0, gamma=0.1):
+    def __init__ (self, C=1.0, gamma=0.1, kernel='rbf'):
         self.C = C
         self.gamma = gamma
+        self.kernel = kernel
         self.classifiers = {}
         self.classes = None
     
@@ -120,7 +145,7 @@ class DAGSVM(BaseClassifier):
                 y_ij = np.where(y_ij == class_i, 1, -1)
                 
                 # Latih SVM
-                svm_ij = SVM_RBF_QP(C=self.C, gamma=self.gamma)
+                svm_ij = SVM_QP(C=self.C, gamma=self.gamma, kernel=self.kernel)
                 svm_ij.fit(X_ij, y_ij)
                 
                 # Simpan classifier

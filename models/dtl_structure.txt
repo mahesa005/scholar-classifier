@@ -1,0 +1,1045 @@
+[Curricular units 2nd sem (approved)]
+├── (<=) [Curricular units 2nd sem (approved)]
+│   ├── (<=) [Curricular units 1st sem (enrolled)]
+│   │   ├── (<=) [Tuition fees up to date]
+│   │   │   ├── (<=) [Father's qualification]
+│   │   │   │   ├── (<=) [Unemployment rate]
+│   │   │   │   │   ├── (<=) Output: Dropout
+│   │   │   │   │   └── (>) Output: Graduate
+│   │   │   │   └── (>) [Previous qualification (grade)]
+│   │   │   │       ├── (<=) Output: Enrolled
+│   │   │   │       └── (>) Output: Graduate
+│   │   │   └── (>) [Previous qualification (grade)]
+│   │   │       ├── (<=) [GDP]
+│   │   │       │   ├── (<=) [Previous qualification (grade)]
+│   │   │       │   │   ├── (<=) Output: Enrolled
+│   │   │       │   │   └── (>) [Mother's occupation]
+│   │   │       │   │       ├── (<=) Output: Dropout
+│   │   │       │   │       └── (>) Output: Enrolled
+│   │   │       │   └── (>) [Scholarship holder]
+│   │   │       │       ├── (<=) [Admission grade]
+│   │   │       │       │   ├── (<=) [GDP]
+│   │   │       │       │   │   ├── (<=) [Mother's occupation]
+│   │   │       │       │   │   │   ├── (<=) [Unemployment rate]
+│   │   │       │       │   │   │   │   ├── (<=) [Previous qualification (grade)]
+│   │   │       │       │   │   │   │   │   ├── (<=) Output: Dropout
+│   │   │       │       │   │   │   │   │   └── (>) Output: Enrolled
+│   │   │       │       │   │   │   │   └── (>) [Mother's occupation]
+│   │   │       │       │   │   │   │       ├── (<=) Output: Dropout
+│   │   │       │       │   │   │   │       └── (>) Output: Graduate
+│   │   │       │       │   │   │   └── (>) [Father's qualification]
+│   │   │       │       │   │   │       ├── (<=) Output: Dropout
+│   │   │       │       │   │   │       └── (>) [Admission grade]
+│   │   │       │       │   │   │           ├── (<=) Output: Dropout
+│   │   │       │       │   │   │           └── (>) [Debtor]
+│   │   │       │       │   │   │               ├── (<=) [Application mode]
+│   │   │       │       │   │   │               │   ├── (<=) Output: Graduate
+│   │   │       │       │   │   │               │   └── (>) [Previous qualification (grade)]
+│   │   │       │       │   │   │               │       ├── (<=) Output: Graduate
+│   │   │       │       │   │   │               │       └── (>) Output: Dropout
+│   │   │       │       │   │   │               └── (>) Output: Dropout
+│   │   │       │       │   │   └── (>) [Father's occupation]
+│   │   │       │       │   │       ├── (<=) [Father's qualification]
+│   │   │       │       │   │       │   ├── (<=) [Age at enrollment]
+│   │   │       │       │   │       │   │   ├── (<=) [Application mode]
+│   │   │       │       │   │       │   │   │   ├── (<=) Output: Dropout
+│   │   │       │       │   │       │   │   │   └── (>) Output: Enrolled
+│   │   │       │       │   │       │   │   └── (>) Output: Dropout
+│   │   │       │       │   │       │   └── (>) Output: Enrolled
+│   │   │       │       │   │       └── (>) [Application mode]
+│   │   │       │       │   │           ├── (<=) Output: Dropout
+│   │   │       │       │   │           └── (>) Output: Graduate
+│   │   │       │       │   └── (>) [Father's occupation]
+│   │   │       │       │       ├── (<=) Output: Enrolled
+│   │   │       │       │       └── (>) [Application mode]
+│   │   │       │       │           ├── (<=) [Father's occupation]
+│   │   │       │       │           │   ├── (<=) Output: Graduate
+│   │   │       │       │           │   └── (>) Output: Enrolled
+│   │   │       │       │           └── (>) Output: Dropout
+│   │   │       │       └── (>) [Application mode]
+│   │   │       │           ├── (<=) [Application order]
+│   │   │       │           │   ├── (<=) Output: Graduate
+│   │   │       │           │   └── (>) [Previous qualification (grade)]
+│   │   │       │           │       ├── (<=) Output: Dropout
+│   │   │       │           │       └── (>) Output: Graduate
+│   │   │       │           └── (>) [Application order]
+│   │   │       │               ├── (<=) Output: Graduate
+│   │   │       │               └── (>) Output: Enrolled
+│   │   │       └── (>) [Unemployment rate]
+│   │   │           ├── (<=) [Previous qualification (grade)]
+│   │   │           │   ├── (<=) [Application mode]
+│   │   │           │   │   ├── (<=) Output: Graduate
+│   │   │           │   │   └── (>) [Application mode]
+│   │   │           │   │       ├── (<=) [Previous qualification (grade)]
+│   │   │           │   │       │   ├── (<=) Output: Enrolled
+│   │   │           │   │       │   └── (>) Output: Dropout
+│   │   │           │   │       └── (>) Output: Graduate
+│   │   │           │   └── (>) [Age at enrollment]
+│   │   │           │       ├── (<=) [Mother's qualification]
+│   │   │           │       │   ├── (<=) [Application order]
+│   │   │           │       │   │   ├── (<=) Output: Dropout
+│   │   │           │       │   │   └── (>) Output: Enrolled
+│   │   │           │       │   └── (>) [Application mode]
+│   │   │           │       │       ├── (<=) Output: Graduate
+│   │   │           │       │       └── (>) Output: Enrolled
+│   │   │           │       └── (>) Output: Dropout
+│   │   │           └── (>) [Father's qualification]
+│   │   │               ├── (<=) [Previous qualification (grade)]
+│   │   │               │   ├── (<=) Output: Graduate
+│   │   │               │   └── (>) Output: Dropout
+│   │   │               └── (>) Output: Dropout
+│   │   └── (>) [Curricular units 2nd sem (evaluations)]
+│   │       ├── (<=) Output: Dropout
+│   │       └── (>) [Age at enrollment]
+│   │           ├── (<=) [Mother's occupation]
+│   │           │   ├── (<=) [Application order]
+│   │           │   │   ├── (<=) [Unemployment rate]
+│   │           │   │   │   ├── (<=) [Age at enrollment]
+│   │           │   │   │   │   ├── (<=) [Mother's occupation]
+│   │           │   │   │   │   │   ├── (<=) Output: Dropout
+│   │           │   │   │   │   │   └── (>) [Father's occupation]
+│   │           │   │   │   │   │       ├── (<=) [Application mode]
+│   │           │   │   │   │   │       │   ├── (<=) Output: Dropout
+│   │           │   │   │   │   │       │   └── (>) Output: Enrolled
+│   │           │   │   │   │   │       └── (>) [GDP]
+│   │           │   │   │   │   │           ├── (<=) [Previous qualification (grade)]
+│   │           │   │   │   │   │           │   ├── (<=) [Tuition fees up to date]
+│   │           │   │   │   │   │           │   │   ├── (<=) Output: Dropout
+│   │           │   │   │   │   │           │   │   └── (>) Output: Enrolled
+│   │           │   │   │   │   │           │   └── (>) Output: Dropout
+│   │           │   │   │   │   │           └── (>) Output: Dropout
+│   │           │   │   │   │   └── (>) [Mother's qualification]
+│   │           │   │   │   │       ├── (<=) Output: Dropout
+│   │           │   │   │   │       └── (>) [Admission grade]
+│   │           │   │   │   │           ├── (<=) Output: Dropout
+│   │           │   │   │   │           └── (>) [Curricular units 2nd sem (evaluations)]
+│   │           │   │   │   │               ├── (<=) Output: Enrolled
+│   │           │   │   │   │               └── (>) Output: Dropout
+│   │           │   │   │   └── (>) [Course]
+│   │           │   │   │       ├── (<=) [Mother's occupation]
+│   │           │   │   │       │   ├── (<=) [Curricular units 1st sem (evaluations)]
+│   │           │   │   │       │   │   ├── (<=) [Previous qualification]
+│   │           │   │   │       │   │   │   ├── (<=) Output: Enrolled
+│   │           │   │   │       │   │   │   └── (>) [Mother's qualification]
+│   │           │   │   │       │   │   │       ├── (<=) Output: Dropout
+│   │           │   │   │       │   │   │       └── (>) Output: Enrolled
+│   │           │   │   │       │   │   └── (>) [Curricular units 1st sem (approved)]
+│   │           │   │   │       │   │       ├── (<=) Output: Dropout
+│   │           │   │   │       │   │       └── (>) [Mother's qualification]
+│   │           │   │   │       │   │           ├── (<=) Output: Dropout
+│   │           │   │   │       │   │           └── (>) Output: Enrolled
+│   │           │   │   │       │   └── (>) [Father's occupation]
+│   │           │   │   │       │       ├── (<=) [Application mode]
+│   │           │   │   │       │       │   ├── (<=) Output: Dropout
+│   │           │   │   │       │       │   └── (>) Output: Enrolled
+│   │           │   │   │       │       └── (>) Output: Dropout
+│   │           │   │   │       └── (>) [Marital status]
+│   │           │   │   │           ├── (<=) Output: Dropout
+│   │           │   │   │           └── (>) [Mother's occupation]
+│   │           │   │   │               ├── (<=) Output: Enrolled
+│   │           │   │   │               └── (>) Output: Dropout
+│   │           │   │   └── (>) Output: Dropout
+│   │           │   └── (>) Output: Enrolled
+│   │           └── (>) Output: Dropout
+│   └── (>) [Tuition fees up to date]
+│       ├── (<=) [GDP]
+│       │   ├── (<=) Output: Dropout
+│       │   └── (>) [Curricular units 2nd sem (evaluations)]
+│       │       ├── (<=) Output: Dropout
+│       │       └── (>) [Previous qualification (grade)]
+│       │           ├── (<=) [Mother's qualification]
+│       │           │   ├── (<=) [Mother's occupation]
+│       │           │   │   ├── (<=) Output: Dropout
+│       │           │   │   └── (>) Output: Enrolled
+│       │           │   └── (>) Output: Dropout
+│       │           └── (>) Output: Enrolled
+│       └── (>) [Curricular units 1st sem (approved)]
+│           ├── (<=) [Curricular units 2nd sem (approved)]
+│           │   ├── (<=) [Course]
+│           │   │   ├── (<=) [Curricular units 1st sem (approved)]
+│           │   │   │   ├── (<=) [Unemployment rate]
+│           │   │   │   │   ├── (<=) [Curricular units 1st sem (grade)]
+│           │   │   │   │   │   ├── (<=) [Debtor]
+│           │   │   │   │   │   │   ├── (<=) [Application mode]
+│           │   │   │   │   │   │   │   ├── (<=) [Admission grade]
+│           │   │   │   │   │   │   │   │   ├── (<=) [Curricular units 1st sem (evaluations)]
+│           │   │   │   │   │   │   │   │   │   ├── (<=) [Course]
+│           │   │   │   │   │   │   │   │   │   │   ├── (<=) [Previous qualification (grade)]
+│           │   │   │   │   │   │   │   │   │   │   │   ├── (<=) [Curricular units 1st sem (enrolled)]
+│           │   │   │   │   │   │   │   │   │   │   │   │   ├── (<=) [Mother's occupation]
+│           │   │   │   │   │   │   │   │   │   │   │   │   │   ├── (<=) Output: Enrolled
+│           │   │   │   │   │   │   │   │   │   │   │   │   │   └── (>) [Previous qualification (grade)]
+│           │   │   │   │   │   │   │   │   │   │   │   │   │       ├── (<=) Output: Dropout
+│           │   │   │   │   │   │   │   │   │   │   │   │   │       └── (>) Output: Enrolled
+│           │   │   │   │   │   │   │   │   │   │   │   │   └── (>) Output: Dropout
+│           │   │   │   │   │   │   │   │   │   │   │   └── (>) Output: Dropout
+│           │   │   │   │   │   │   │   │   │   │   └── (>) Output: Enrolled
+│           │   │   │   │   │   │   │   │   │   └── (>) Output: Dropout
+│           │   │   │   │   │   │   │   │   └── (>) Output: Enrolled
+│           │   │   │   │   │   │   │   └── (>) Output: Enrolled
+│           │   │   │   │   │   │   └── (>) Output: Enrolled
+│           │   │   │   │   │   └── (>) [Mother's occupation]
+│           │   │   │   │   │       ├── (<=) Output: Dropout
+│           │   │   │   │   │       └── (>) [Course]
+│           │   │   │   │   │           ├── (<=) [Course]
+│           │   │   │   │   │           │   ├── (<=) Output: Dropout
+│           │   │   │   │   │           │   └── (>) [Curricular units 2nd sem (without evaluations)]
+│           │   │   │   │   │           │       ├── (<=) [Mother's qualification]
+│           │   │   │   │   │           │       │   ├── (<=) [Mother's occupation]
+│           │   │   │   │   │           │       │   │   ├── (<=) Output: Dropout
+│           │   │   │   │   │           │       │   │   └── (>) Output: Enrolled
+│           │   │   │   │   │           │       │   └── (>) Output: Enrolled
+│           │   │   │   │   │           │       └── (>) Output: Dropout
+│           │   │   │   │   │           └── (>) [Application order]
+│           │   │   │   │   │               ├── (<=) Output: Dropout
+│           │   │   │   │   │               └── (>) Output: Enrolled
+│           │   │   │   │   └── (>) [Curricular units 1st sem (evaluations)]
+│           │   │   │   │       ├── (<=) [Mother's qualification]
+│           │   │   │   │       │   ├── (<=) [Father's qualification]
+│           │   │   │   │       │   │   ├── (<=) [Course]
+│           │   │   │   │       │   │   │   ├── (<=) [Curricular units 1st sem (grade)]
+│           │   │   │   │       │   │   │   │   ├── (<=) Output: Enrolled
+│           │   │   │   │       │   │   │   │   └── (>) Output: Dropout
+│           │   │   │   │       │   │   │   └── (>) Output: Dropout
+│           │   │   │   │       │   │   └── (>) Output: Enrolled
+│           │   │   │   │       │   └── (>) Output: Dropout
+│           │   │   │   │       └── (>) Output: Enrolled
+│           │   │   │   └── (>) [Mother's qualification]
+│           │   │   │       ├── (<=) Output: Enrolled
+│           │   │   │       └── (>) [Curricular units 1st sem (grade)]
+│           │   │   │           ├── (<=) Output: Enrolled
+│           │   │   │           └── (>) [Application mode]
+│           │   │   │               ├── (<=) Output: Dropout
+│           │   │   │               └── (>) [Previous qualification (grade)]
+│           │   │   │                   ├── (<=) Output: Enrolled
+│           │   │   │                   └── (>) Output: Dropout
+│           │   │   └── (>) [Scholarship holder]
+│           │   │       ├── (<=) Output: Dropout
+│           │   │       └── (>) Output: Graduate
+│           │   └── (>) [Curricular units 2nd sem (enrolled)]
+│           │       ├── (<=) [Scholarship holder]
+│           │       │   ├── (<=) [Course]
+│           │       │   │   ├── (<=) [Mother's qualification]
+│           │       │   │   │   ├── (<=) [Application order]
+│           │       │   │   │   │   ├── (<=) [Father's qualification]
+│           │       │   │   │   │   │   ├── (<=) Output: Enrolled
+│           │       │   │   │   │   │   └── (>) Output: Graduate
+│           │       │   │   │   │   └── (>) Output: Enrolled
+│           │       │   │   │   └── (>) Output: Enrolled
+│           │       │   │   └── (>) [Curricular units 1st sem (grade)]
+│           │       │   │       ├── (<=) [Curricular units 2nd sem (evaluations)]
+│           │       │   │       │   ├── (<=) [Previous qualification (grade)]
+│           │       │   │       │   │   ├── (<=) [Mother's qualification]
+│           │       │   │       │   │   │   ├── (<=) Output: Enrolled
+│           │       │   │       │   │   │   └── (>) Output: Dropout
+│           │       │   │       │   │   └── (>) [Mother's qualification]
+│           │       │   │       │   │       ├── (<=) [Course]
+│           │       │   │       │   │       │   ├── (<=) [Previous qualification (grade)]
+│           │       │   │       │   │       │   │   ├── (<=) [Father's qualification]
+│           │       │   │       │   │       │   │   │   ├── (<=) [Father's occupation]
+│           │       │   │       │   │       │   │   │   │   ├── (<=) Output: Enrolled
+│           │       │   │       │   │       │   │   │   │   └── (>) Output: Dropout
+│           │       │   │       │   │       │   │   │   └── (>) Output: Enrolled
+│           │       │   │       │   │       │   │   └── (>) Output: Enrolled
+│           │       │   │       │   │       │   └── (>) Output: Dropout
+│           │       │   │       │   │       └── (>) Output: Enrolled
+│           │       │   │       │   └── (>) Output: Dropout
+│           │       │   │       └── (>) [Admission grade]
+│           │       │   │           ├── (<=) [Application order]
+│           │       │   │           │   ├── (<=) Output: Dropout
+│           │       │   │           │   └── (>) Output: Graduate
+│           │       │   │           └── (>) [Course]
+│           │       │   │               ├── (<=) Output: Enrolled
+│           │       │   │               └── (>) Output: Graduate
+│           │       │   └── (>) [Inflation rate]
+│           │       │       ├── (<=) [Application order]
+│           │       │       │   ├── (<=) Output: Graduate
+│           │       │       │   └── (>) Output: Enrolled
+│           │       │       └── (>) [Previous qualification (grade)]
+│           │       │           ├── (<=) Output: Enrolled
+│           │       │           └── (>) [Application mode]
+│           │       │               ├── (<=) Output: Graduate
+│           │       │               └── (>) Output: Dropout
+│           │       └── (>) [Admission grade]
+│           │           ├── (<=) [Unemployment rate]
+│           │           │   ├── (<=) [Mother's occupation]
+│           │           │   │   ├── (<=) Output: Dropout
+│           │           │   │   └── (>) [Age at enrollment]
+│           │           │   │       ├── (<=) [Previous qualification (grade)]
+│           │           │   │       │   ├── (<=) Output: Dropout
+│           │           │   │       │   └── (>) [Father's qualification]
+│           │           │   │       │       ├── (<=) [Mother's occupation]
+│           │           │   │       │       │   ├── (<=) Output: Enrolled
+│           │           │   │       │       │   └── (>) [Previous qualification (grade)]
+│           │           │   │       │       │       ├── (<=) Output: Dropout
+│           │           │   │       │       │       └── (>) [Application mode]
+│           │           │   │       │       │           ├── (<=) Output: Enrolled
+│           │           │   │       │       │           └── (>) Output: Dropout
+│           │           │   │       │       └── (>) Output: Enrolled
+│           │           │   │       └── (>) Output: Enrolled
+│           │           │   └── (>) [Previous qualification (grade)]
+│           │           │       ├── (<=) [Mother's qualification]
+│           │           │       │   ├── (<=) [Mother's occupation]
+│           │           │       │   │   ├── (<=) [Application mode]
+│           │           │       │   │   │   ├── (<=) Output: Enrolled
+│           │           │       │   │   │   └── (>) Output: Dropout
+│           │           │       │   │   └── (>) Output: Enrolled
+│           │           │       │   └── (>) Output: Dropout
+│           │           │       └── (>) [Curricular units 1st sem (grade)]
+│           │           │           ├── (<=) [Marital status]
+│           │           │           │   ├── (<=) Output: Enrolled
+│           │           │           │   └── (>) Output: Dropout
+│           │           │           └── (>) Output: Dropout
+│           │           └── (>) [Curricular units 2nd sem (evaluations)]
+│           │               ├── (<=) Output: Graduate
+│           │               └── (>) Output: Enrolled
+│           └── (>) [Age at enrollment]
+│               ├── (<=) [Age at enrollment]
+│               │   ├── (<=) [GDP]
+│               │   │   ├── (<=) Output: Graduate
+│               │   │   └── (>) [Application order]
+│               │   │       ├── (<=) Output: Enrolled
+│               │   │       └── (>) Output: Graduate
+│               │   └── (>) Output: Enrolled
+│               └── (>) [Curricular units 1st sem (grade)]
+│                   ├── (<=) [Application mode]
+│                   │   ├── (<=) [Marital status]
+│                   │   │   ├── (<=) [Course]
+│                   │   │   │   ├── (<=) Output: Enrolled
+│                   │   │   │   └── (>) Output: Graduate
+│                   │   │   └── (>) Output: Graduate
+│                   │   └── (>) Output: Dropout
+│                   └── (>) [Curricular units 1st sem (grade)]
+│                       ├── (<=) Output: Dropout
+│                       └── (>) [Father's occupation]
+│                           ├── (<=) Output: Graduate
+│                           └── (>) Output: Dropout
+└── (>) [Curricular units 2nd sem (approved)]
+    ├── (<=) [Tuition fees up to date]
+    │   ├── (<=) [GDP]
+    │   │   ├── (<=) [Curricular units 1st sem (grade)]
+    │   │   │   ├── (<=) [Application mode]
+    │   │   │   │   ├── (<=) Output: Graduate
+    │   │   │   │   └── (>) Output: Dropout
+    │   │   │   └── (>) [Father's qualification]
+    │   │   │       ├── (<=) [Previous qualification (grade)]
+    │   │   │       │   ├── (<=) Output: Dropout
+    │   │   │       │   └── (>) [Application mode]
+    │   │   │       │       ├── (<=) Output: Enrolled
+    │   │   │       │       └── (>) Output: Dropout
+    │   │   │       └── (>) Output: Dropout
+    │   │   └── (>) [Curricular units 1st sem (enrolled)]
+    │   │       ├── (<=) [Curricular units 2nd sem (grade)]
+    │   │       │   ├── (<=) [Course]
+    │   │       │   │   ├── (<=) Output: Dropout
+    │   │       │   │   └── (>) [Application mode]
+    │   │       │   │       ├── (<=) Output: Dropout
+    │   │       │   │       └── (>) Output: Enrolled
+    │   │       │   └── (>) [Previous qualification (grade)]
+    │   │       │       ├── (<=) Output: Graduate
+    │   │       │       └── (>) Output: Enrolled
+    │   │       └── (>) Output: Dropout
+    │   └── (>) [Curricular units 2nd sem (enrolled)]
+    │       ├── (<=) [Curricular units 2nd sem (approved)]
+    │       │   ├── (<=) [Course]
+    │       │   │   ├── (<=) [Age at enrollment]
+    │       │   │   │   ├── (<=) [Admission grade]
+    │       │   │   │   │   ├── (<=) [Application order]
+    │       │   │   │   │   │   ├── (<=) [Curricular units 1st sem (approved)]
+    │       │   │   │   │   │   │   ├── (<=) [Previous qualification (grade)]
+    │       │   │   │   │   │   │   │   ├── (<=) Output: Graduate
+    │       │   │   │   │   │   │   │   └── (>) Output: Enrolled
+    │       │   │   │   │   │   │   └── (>) [Curricular units 1st sem (grade)]
+    │       │   │   │   │   │   │       ├── (<=) [Mother's occupation]
+    │       │   │   │   │   │   │       │   ├── (<=) Output: Graduate
+    │       │   │   │   │   │   │       │   └── (>) [Curricular units 1st sem (grade)]
+    │       │   │   │   │   │   │       │       ├── (<=) Output: Graduate
+    │       │   │   │   │   │   │       │       └── (>) [Curricular units 1st sem (approved)]
+    │       │   │   │   │   │   │       │           ├── (<=) Output: Enrolled
+    │       │   │   │   │   │   │       │           └── (>) [Admission grade]
+    │       │   │   │   │   │   │       │               ├── (<=) Output: Graduate
+    │       │   │   │   │   │   │       │               └── (>) [Father's occupation]
+    │       │   │   │   │   │   │       │                   ├── (<=) Output: Enrolled
+    │       │   │   │   │   │   │       │                   └── (>) [Previous qualification (grade)]
+    │       │   │   │   │   │   │       │                       ├── (<=) Output: Enrolled
+    │       │   │   │   │   │   │       │                       └── (>) Output: Graduate
+    │       │   │   │   │   │   │       └── (>) Output: Graduate
+    │       │   │   │   │   │   └── (>) Output: Graduate
+    │       │   │   │   │   └── (>) [Application mode]
+    │       │   │   │   │       ├── (<=) Output: Graduate
+    │       │   │   │   │       └── (>) Output: Enrolled
+    │       │   │   │   └── (>) [Inflation rate]
+    │       │   │   │       ├── (<=) Output: Graduate
+    │       │   │   │       └── (>) [Scholarship holder]
+    │       │   │   │           ├── (<=) [Curricular units 1st sem (evaluations)]
+    │       │   │   │           │   ├── (<=) [Curricular units 1st sem (grade)]
+    │       │   │   │           │   │   ├── (<=) Output: Graduate
+    │       │   │   │           │   │   └── (>) Output: Dropout
+    │       │   │   │           │   └── (>) [Displaced]
+    │       │   │   │           │       ├── (<=) [Father's occupation]
+    │       │   │   │           │       │   ├── (<=) [Curricular units 1st sem (approved)]
+    │       │   │   │           │       │   │   ├── (<=) Output: Dropout
+    │       │   │   │           │       │   │   └── (>) Output: Enrolled
+    │       │   │   │           │       │   └── (>) Output: Graduate
+    │       │   │   │           │       └── (>) [Course]
+    │       │   │   │           │           ├── (<=) [Father's occupation]
+    │       │   │   │           │           │   ├── (<=) Output: Enrolled
+    │       │   │   │           │           │   └── (>) [Course]
+    │       │   │   │           │           │       ├── (<=) Output: Enrolled
+    │       │   │   │           │           │       └── (>) Output: Graduate
+    │       │   │   │           │           └── (>) [Admission grade]
+    │       │   │   │           │               ├── (<=) [Previous qualification (grade)]
+    │       │   │   │           │               │   ├── (<=) Output: Enrolled
+    │       │   │   │           │               │   └── (>) Output: Graduate
+    │       │   │   │           │               └── (>) Output: Dropout
+    │       │   │   │           └── (>) Output: Graduate
+    │       │   │   └── (>) [Mother's occupation]
+    │       │   │       ├── (<=) [Mother's qualification]
+    │       │   │       │   ├── (<=) [Marital status]
+    │       │   │       │   │   ├── (<=) Output: Enrolled
+    │       │   │       │   │   └── (>) Output: Graduate
+    │       │   │       │   └── (>) Output: Dropout
+    │       │   │       └── (>) Output: Enrolled
+    │       │   └── (>) [Curricular units 1st sem (evaluations)]
+    │       │       ├── (<=) [Debtor]
+    │       │       │   ├── (<=) [Curricular units 1st sem (grade)]
+    │       │       │   │   ├── (<=) [Curricular units 2nd sem (grade)]
+    │       │       │   │   │   ├── (<=) Output: Enrolled
+    │       │       │   │   │   └── (>) [Application mode]
+    │       │       │   │   │       ├── (<=) [Mother's qualification]
+    │       │       │   │   │       │   ├── (<=) Output: Enrolled
+    │       │       │   │   │       │   └── (>) Output: Graduate
+    │       │       │   │   │       └── (>) Output: Graduate
+    │       │       │   │   └── (>) [GDP]
+    │       │       │   │       ├── (<=) [Curricular units 2nd sem (grade)]
+    │       │       │   │       │   ├── (<=) Output: Graduate
+    │       │       │   │       │   └── (>) [Gender]
+    │       │       │   │       │       ├── (<=) Output: Graduate
+    │       │       │   │       │       └── (>) Output: Dropout
+    │       │       │   │       └── (>) [Age at enrollment]
+    │       │       │   │           ├── (<=) [Gender]
+    │       │       │   │           │   ├── (<=) Output: Graduate
+    │       │       │   │           │   └── (>) [Father's qualification]
+    │       │       │   │           │       ├── (<=) Output: Enrolled
+    │       │       │   │           │       └── (>) [Mother's qualification]
+    │       │       │   │           │           ├── (<=) [Father's qualification]
+    │       │       │   │           │           │   ├── (<=) Output: Dropout
+    │       │       │   │           │           │   └── (>) Output: Graduate
+    │       │       │   │           │           └── (>) Output: Graduate
+    │       │       │   │           └── (>) [Curricular units 1st sem (approved)]
+    │       │       │   │               ├── (<=) Output: Enrolled
+    │       │       │   │               └── (>) [Previous qualification (grade)]
+    │       │       │   │                   ├── (<=) Output: Dropout
+    │       │       │   │                   └── (>) [Mother's qualification]
+    │       │       │   │                       ├── (<=) Output: Graduate
+    │       │       │   │                       └── (>) Output: Enrolled
+    │       │       │   └── (>) [Unemployment rate]
+    │       │       │       ├── (<=) Output: Dropout
+    │       │       │       └── (>) Output: Graduate
+    │       │       └── (>) [Mother's qualification]
+    │       │           ├── (<=) [Previous qualification (grade)]
+    │       │           │   ├── (<=) [Father's occupation]
+    │       │           │   │   ├── (<=) [Mother's qualification]
+    │       │           │   │   │   ├── (<=) [Previous qualification (grade)]
+    │       │           │   │   │   │   ├── (<=) Output: Enrolled
+    │       │           │   │   │   │   └── (>) Output: Graduate
+    │       │           │   │   │   └── (>) [Previous qualification]
+    │       │           │   │   │       ├── (<=) Output: Enrolled
+    │       │           │   │   │       └── (>) Output: Dropout
+    │       │           │   │   └── (>) [Mother's occupation]
+    │       │           │   │       ├── (<=) Output: Graduate
+    │       │           │   │       └── (>) [Admission grade]
+    │       │           │   │           ├── (<=) Output: Graduate
+    │       │           │   │           └── (>) [Course]
+    │       │           │   │               ├── (<=) [Curricular units 1st sem (evaluations)]
+    │       │           │   │               │   ├── (<=) Output: Graduate
+    │       │           │   │               │   └── (>) Output: Enrolled
+    │       │           │   │               └── (>) [Application mode]
+    │       │           │   │                   ├── (<=) [Course]
+    │       │           │   │                   │   ├── (<=) Output: Enrolled
+    │       │           │   │                   │   └── (>) Output: Dropout
+    │       │           │   │                   └── (>) Output: Enrolled
+    │       │           │   └── (>) [Application mode]
+    │       │           │       ├── (<=) Output: Dropout
+    │       │           │       └── (>) Output: Graduate
+    │       │           └── (>) Output: Graduate
+    │       └── (>) [Curricular units 2nd sem (credited)]
+    │           ├── (<=) [Course]
+    │           │   ├── (<=) [Curricular units 1st sem (evaluations)]
+    │           │   │   ├── (<=) [Unemployment rate]
+    │           │   │   │   ├── (<=) [Admission grade]
+    │           │   │   │   │   ├── (<=) [Mother's qualification]
+    │           │   │   │   │   │   ├── (<=) [Curricular units 2nd sem (evaluations)]
+    │           │   │   │   │   │   │   ├── (<=) Output: Graduate
+    │           │   │   │   │   │   │   └── (>) [Previous qualification]
+    │           │   │   │   │   │   │       ├── (<=) Output: Dropout
+    │           │   │   │   │   │   │       └── (>) Output: Graduate
+    │           │   │   │   │   │   └── (>) Output: Enrolled
+    │           │   │   │   │   └── (>) [Application order]
+    │           │   │   │   │       ├── (<=) Output: Enrolled
+    │           │   │   │   │       └── (>) Output: Graduate
+    │           │   │   │   └── (>) [Age at enrollment]
+    │           │   │   │       ├── (<=) [Curricular units 1st sem (grade)]
+    │           │   │   │       │   ├── (<=) [Application order]
+    │           │   │   │       │   │   ├── (<=) Output: Graduate
+    │           │   │   │       │   │   └── (>) Output: Enrolled
+    │           │   │   │       │   └── (>) [Curricular units 2nd sem (grade)]
+    │           │   │   │       │       ├── (<=) [Unemployment rate]
+    │           │   │   │       │       │   ├── (<=) Output: Dropout
+    │           │   │   │       │       │   └── (>) [Mother's qualification]
+    │           │   │   │       │       │       ├── (<=) Output: Graduate
+    │           │   │   │       │       │       └── (>) Output: Enrolled
+    │           │   │   │       │       └── (>) [Mother's occupation]
+    │           │   │   │       │           ├── (<=) [Previous qualification (grade)]
+    │           │   │   │       │           │   ├── (<=) [Course]
+    │           │   │   │       │           │   │   ├── (<=) Output: Dropout
+    │           │   │   │       │           │   │   └── (>) Output: Graduate
+    │           │   │   │       │           │   └── (>) [Course]
+    │           │   │   │       │           │       ├── (<=) [Previous qualification (grade)]
+    │           │   │   │       │           │       │   ├── (<=) Output: Dropout
+    │           │   │   │       │           │       │   └── (>) Output: Graduate
+    │           │   │   │       │           │       └── (>) Output: Dropout
+    │           │   │   │       │           └── (>) [Admission grade]
+    │           │   │   │       │               ├── (<=) Output: Dropout
+    │           │   │   │       │               └── (>) [Curricular units 2nd sem (evaluations)]
+    │           │   │   │       │                   ├── (<=) [Mother's occupation]
+    │           │   │   │       │                   │   ├── (<=) Output: Graduate
+    │           │   │   │       │                   │   └── (>) [Course]
+    │           │   │   │       │                   │       ├── (<=) Output: Graduate
+    │           │   │   │       │                   │       └── (>) Output: Enrolled
+    │           │   │   │       │                   └── (>) Output: Graduate
+    │           │   │   │       └── (>) [Scholarship holder]
+    │           │   │   │           ├── (<=) [Curricular units 1st sem (without evaluations)]
+    │           │   │   │           │   ├── (<=) [Curricular units 2nd sem (approved)]
+    │           │   │   │           │   │   ├── (<=) [Curricular units 1st sem (credited)]
+    │           │   │   │           │   │   │   ├── (<=) [Curricular units 2nd sem (grade)]
+    │           │   │   │           │   │   │   │   ├── (<=) [Inflation rate]
+    │           │   │   │           │   │   │   │   │   ├── (<=) [Curricular units 2nd sem (grade)]
+    │           │   │   │           │   │   │   │   │   │   ├── (<=) [Displaced]
+    │           │   │   │           │   │   │   │   │   │   │   ├── (<=) [Course]
+    │           │   │   │           │   │   │   │   │   │   │   │   ├── (<=) Output: Enrolled
+    │           │   │   │           │   │   │   │   │   │   │   │   └── (>) Output: Graduate
+    │           │   │   │           │   │   │   │   │   │   │   └── (>) Output: Enrolled
+    │           │   │   │           │   │   │   │   │   │   └── (>) Output: Graduate
+    │           │   │   │           │   │   │   │   │   └── (>) [Age at enrollment]
+    │           │   │   │           │   │   │   │   │       ├── (<=) [Application mode]
+    │           │   │   │           │   │   │   │   │       │   ├── (<=) Output: Enrolled
+    │           │   │   │           │   │   │   │   │       │   └── (>) Output: Graduate
+    │           │   │   │           │   │   │   │   │       └── (>) Output: Enrolled
+    │           │   │   │           │   │   │   │   └── (>) [Curricular units 1st sem (grade)]
+    │           │   │   │           │   │   │   │       ├── (<=) Output: Dropout
+    │           │   │   │           │   │   │   │       └── (>) [Father's qualification]
+    │           │   │   │           │   │   │   │           ├── (<=) Output: Enrolled
+    │           │   │   │           │   │   │   │           └── (>) Output: Graduate
+    │           │   │   │           │   │   │   └── (>) Output: Dropout
+    │           │   │   │           │   │   └── (>) [Previous qualification (grade)]
+    │           │   │   │           │   │       ├── (<=) [Age at enrollment]
+    │           │   │   │           │   │       │   ├── (<=) Output: Graduate
+    │           │   │   │           │   │       │   └── (>) Output: Dropout
+    │           │   │   │           │   │       └── (>) [Admission grade]
+    │           │   │   │           │   │           ├── (<=) [Father's qualification]
+    │           │   │   │           │   │           │   ├── (<=) Output: Dropout
+    │           │   │   │           │   │           │   └── (>) Output: Enrolled
+    │           │   │   │           │   │           └── (>) [Curricular units 1st sem (enrolled)]
+    │           │   │   │           │   │               ├── (<=) [Admission grade]
+    │           │   │   │           │   │               │   ├── (<=) [Admission grade]
+    │           │   │   │           │   │               │   │   ├── (<=) [Curricular units 1st sem (grade)]
+    │           │   │   │           │   │               │   │   │   ├── (<=) [Inflation rate]
+    │           │   │   │           │   │               │   │   │   │   ├── (<=) Output: Graduate
+    │           │   │   │           │   │               │   │   │   │   └── (>) [Curricular units 1st sem (grade)]
+    │           │   │   │           │   │               │   │   │   │       ├── (<=) Output: Graduate
+    │           │   │   │           │   │               │   │   │   │       └── (>) Output: Enrolled
+    │           │   │   │           │   │               │   │   │   └── (>) [Admission grade]
+    │           │   │   │           │   │               │   │   │       ├── (<=) Output: Graduate
+    │           │   │   │           │   │               │   │   │       └── (>) [Application order]
+    │           │   │   │           │   │               │   │   │           ├── (<=) Output: Dropout
+    │           │   │   │           │   │               │   │   │           └── (>) Output: Graduate
+    │           │   │   │           │   │               │   │   └── (>) [Curricular units 2nd sem (grade)]
+    │           │   │   │           │   │               │   │       ├── (<=) Output: Enrolled
+    │           │   │   │           │   │               │   │       └── (>) [Gender]
+    │           │   │   │           │   │               │   │           ├── (<=) [Unemployment rate]
+    │           │   │   │           │   │               │   │           │   ├── (<=) Output: Graduate
+    │           │   │   │           │   │               │   │           │   └── (>) [Father's qualification]
+    │           │   │   │           │   │               │   │           │       ├── (<=) [Course]
+    │           │   │   │           │   │               │   │           │       │   ├── (<=) Output: Graduate
+    │           │   │   │           │   │               │   │           │       │   └── (>) Output: Enrolled
+    │           │   │   │           │   │               │   │           │       └── (>) Output: Enrolled
+    │           │   │   │           │   │               │   │           └── (>) Output: Graduate
+    │           │   │   │           │   │               │   └── (>) Output: Graduate
+    │           │   │   │           │   │               └── (>) [Father's qualification]
+    │           │   │   │           │   │                   ├── (<=) [Previous qualification (grade)]
+    │           │   │   │           │   │                   │   ├── (<=) Output: Graduate
+    │           │   │   │           │   │                   │   └── (>) Output: Enrolled
+    │           │   │   │           │   │                   └── (>) Output: Dropout
+    │           │   │   │           │   └── (>) Output: Enrolled
+    │           │   │   │           └── (>) [Curricular units 1st sem (evaluations)]
+    │           │   │   │               ├── (<=) [Admission grade]
+    │           │   │   │               │   ├── (<=) [Curricular units 2nd sem (grade)]
+    │           │   │   │               │   │   ├── (<=) [Application mode]
+    │           │   │   │               │   │   │   ├── (<=) Output: Dropout
+    │           │   │   │               │   │   │   └── (>) Output: Graduate
+    │           │   │   │               │   │   └── (>) [Father's occupation]
+    │           │   │   │               │   │       ├── (<=) [Mother's qualification]
+    │           │   │   │               │   │       │   ├── (<=) Output: Enrolled
+    │           │   │   │               │   │       │   └── (>) Output: Graduate
+    │           │   │   │               │   │       └── (>) Output: Enrolled
+    │           │   │   │               │   └── (>) [Age at enrollment]
+    │           │   │   │               │       ├── (<=) [Mother's qualification]
+    │           │   │   │               │       │   ├── (<=) Output: Graduate
+    │           │   │   │               │       │   └── (>) [Father's occupation]
+    │           │   │   │               │       │       ├── (<=) Output: Dropout
+    │           │   │   │               │       │       └── (>) [Application mode]
+    │           │   │   │               │       │           ├── (<=) Output: Graduate
+    │           │   │   │               │       │           └── (>) Output: Dropout
+    │           │   │   │               │       └── (>) [Previous qualification]
+    │           │   │   │               │           ├── (<=) Output: Graduate
+    │           │   │   │               │           └── (>) Output: Dropout
+    │           │   │   │               └── (>) [Curricular units 1st sem (without evaluations)]
+    │           │   │   │                   ├── (<=) Output: Graduate
+    │           │   │   │                   └── (>) Output: Enrolled
+    │           │   │   └── (>) [Course]
+    │           │   │       ├── (<=) Output: Graduate
+    │           │   │       └── (>) [Age at enrollment]
+    │           │   │           ├── (<=) [Curricular units 1st sem (grade)]
+    │           │   │           │   ├── (<=) [Scholarship holder]
+    │           │   │           │   │   ├── (<=) [Mother's qualification]
+    │           │   │           │   │   │   ├── (<=) [Displaced]
+    │           │   │           │   │   │   │   ├── (<=) Output: Enrolled
+    │           │   │           │   │   │   │   └── (>) Output: Dropout
+    │           │   │           │   │   │   └── (>) Output: Dropout
+    │           │   │           │   │   └── (>) Output: Enrolled
+    │           │   │           │   └── (>) [Previous qualification (grade)]
+    │           │   │           │       ├── (<=) Output: Dropout
+    │           │   │           │       └── (>) [Admission grade]
+    │           │   │           │           ├── (<=) [Curricular units 1st sem (without evaluations)]
+    │           │   │           │           │   ├── (<=) [Previous qualification (grade)]
+    │           │   │           │           │   │   ├── (<=) [Curricular units 1st sem (enrolled)]
+    │           │   │           │           │   │   │   ├── (<=) Output: Graduate
+    │           │   │           │           │   │   │   └── (>) Output: Enrolled
+    │           │   │           │           │   │   └── (>) Output: Graduate
+    │           │   │           │           │   └── (>) [Marital status]
+    │           │   │           │           │       ├── (<=) Output: Dropout
+    │           │   │           │           │       └── (>) Output: Enrolled
+    │           │   │           │           └── (>) [Mother's occupation]
+    │           │   │           │               ├── (<=) [Mother's occupation]
+    │           │   │           │               │   ├── (<=) Output: Dropout
+    │           │   │           │               │   └── (>) [Previous qualification (grade)]
+    │           │   │           │               │       ├── (<=) [Father's occupation]
+    │           │   │           │               │       │   ├── (<=) Output: Enrolled
+    │           │   │           │               │       │   └── (>) Output: Graduate
+    │           │   │           │               │       └── (>) Output: Dropout
+    │           │   │           │               └── (>) [Curricular units 1st sem (enrolled)]
+    │           │   │           │                   ├── (<=) [Curricular units 1st sem (evaluations)]
+    │           │   │           │                   │   ├── (<=) [Mother's occupation]
+    │           │   │           │                   │   │   ├── (<=) [Curricular units 1st sem (evaluations)]
+    │           │   │           │                   │   │   │   ├── (<=) [GDP]
+    │           │   │           │                   │   │   │   │   ├── (<=) Output: Graduate
+    │           │   │           │                   │   │   │   │   └── (>) [Scholarship holder]
+    │           │   │           │                   │   │   │   │       ├── (<=) Output: Dropout
+    │           │   │           │                   │   │   │   │       └── (>) Output: Graduate
+    │           │   │           │                   │   │   │   └── (>) Output: Graduate
+    │           │   │           │                   │   │   └── (>) Output: Enrolled
+    │           │   │           │                   │   └── (>) Output: Enrolled
+    │           │   │           │                   └── (>) [Mother's qualification]
+    │           │   │           │                       ├── (<=) Output: Enrolled
+    │           │   │           │                       └── (>) Output: Dropout
+    │           │   │           └── (>) Output: Dropout
+    │           │   └── (>) [Mother's qualification]
+    │           │       ├── (<=) [Curricular units 2nd sem (grade)]
+    │           │       │   ├── (<=) [Curricular units 2nd sem (evaluations)]
+    │           │       │   │   ├── (<=) [Father's qualification]
+    │           │       │   │   │   ├── (<=) Output: Enrolled
+    │           │       │   │   │   └── (>) Output: Graduate
+    │           │       │   │   └── (>) Output: Enrolled
+    │           │       │   └── (>) Output: Graduate
+    │           │       └── (>) [Application order]
+    │           │           ├── (<=) [Curricular units 1st sem (grade)]
+    │           │           │   ├── (<=) [Curricular units 1st sem (approved)]
+    │           │           │   │   ├── (<=) Output: Enrolled
+    │           │           │   │   └── (>) Output: Dropout
+    │           │           │   └── (>) [Displaced]
+    │           │           │       ├── (<=) [Application mode]
+    │           │           │       │   ├── (<=) [Previous qualification (grade)]
+    │           │           │       │   │   ├── (<=) Output: Enrolled
+    │           │           │       │   │   └── (>) Output: Dropout
+    │           │           │       │   └── (>) Output: Dropout
+    │           │           │       └── (>) [Curricular units 2nd sem (grade)]
+    │           │           │           ├── (<=) Output: Enrolled
+    │           │           │           └── (>) [Father's qualification]
+    │           │           │               ├── (<=) Output: Dropout
+    │           │           │               └── (>) Output: Enrolled
+    │           │           └── (>) [Admission grade]
+    │           │               ├── (<=) [Previous qualification (grade)]
+    │           │               │   ├── (<=) Output: Dropout
+    │           │               │   └── (>) Output: Graduate
+    │           │               └── (>) [Father's occupation]
+    │           │                   ├── (<=) Output: Dropout
+    │           │                   └── (>) Output: Enrolled
+    │           └── (>) [Marital status]
+    │               ├── (<=) [Debtor]
+    │               │   ├── (<=) Output: Dropout
+    │               │   └── (>) [Application mode]
+    │               │       ├── (<=) Output: Dropout
+    │               │       └── (>) Output: Enrolled
+    │               └── (>) [Course]
+    │                   ├── (<=) Output: Dropout
+    │                   └── (>) Output: Graduate
+    └── (>) [Curricular units 1st sem (evaluations)]
+        ├── (<=) [Curricular units 2nd sem (grade)]
+        │   ├── (<=) [Tuition fees up to date]
+        │   │   ├── (<=) [Mother's occupation]
+        │   │   │   ├── (<=) [Previous qualification (grade)]
+        │   │   │   │   ├── (<=) Output: Enrolled
+        │   │   │   │   └── (>) Output: Graduate
+        │   │   │   └── (>) [Course]
+        │   │   │       ├── (<=) Output: Dropout
+        │   │   │       └── (>) Output: Graduate
+        │   │   └── (>) [Course]
+        │   │       ├── (<=) [Unemployment rate]
+        │   │       │   ├── (<=) [Curricular units 1st sem (without evaluations)]
+        │   │       │   │   ├── (<=) [Gender]
+        │   │       │   │   │   ├── (<=) [Application order]
+        │   │       │   │   │   │   ├── (<=) [Father's occupation]
+        │   │       │   │   │   │   │   ├── (<=) [Curricular units 2nd sem (evaluations)]
+        │   │       │   │   │   │   │   │   ├── (<=) [Curricular units 1st sem (approved)]
+        │   │       │   │   │   │   │   │   │   ├── (<=) [Curricular units 1st sem (grade)]
+        │   │       │   │   │   │   │   │   │   │   ├── (<=) Output: Graduate
+        │   │       │   │   │   │   │   │   │   │   └── (>) Output: Enrolled
+        │   │       │   │   │   │   │   │   │   └── (>) Output: Graduate
+        │   │       │   │   │   │   │   │   └── (>) [Application mode]
+        │   │       │   │   │   │   │   │       ├── (<=) [Scholarship holder]
+        │   │       │   │   │   │   │   │       │   ├── (<=) [Course]
+        │   │       │   │   │   │   │   │       │   │   ├── (<=) [Age at enrollment]
+        │   │       │   │   │   │   │   │       │   │   │   ├── (<=) Output: Graduate
+        │   │       │   │   │   │   │   │       │   │   │   └── (>) [Father's occupation]
+        │   │       │   │   │   │   │   │       │   │   │       ├── (<=) Output: Graduate
+        │   │       │   │   │   │   │   │       │   │   │       └── (>) [Application order]
+        │   │       │   │   │   │   │   │       │   │   │           ├── (<=) Output: Enrolled
+        │   │       │   │   │   │   │   │       │   │   │           └── (>) Output: Graduate
+        │   │       │   │   │   │   │   │       │   │   └── (>) Output: Enrolled
+        │   │       │   │   │   │   │   │       │   └── (>) Output: Graduate
+        │   │       │   │   │   │   │   │       └── (>) [Father's qualification]
+        │   │       │   │   │   │   │   │           ├── (<=) Output: Enrolled
+        │   │       │   │   │   │   │   │           └── (>) Output: Graduate
+        │   │       │   │   │   │   │   └── (>) Output: Graduate
+        │   │       │   │   │   │   └── (>) [Mother's occupation]
+        │   │       │   │   │   │       ├── (<=) [Father's occupation]
+        │   │       │   │   │   │       │   ├── (<=) Output: Dropout
+        │   │       │   │   │   │       │   └── (>) [Curricular units 2nd sem (evaluations)]
+        │   │       │   │   │   │       │       ├── (<=) Output: Graduate
+        │   │       │   │   │   │       │       └── (>) [Application order]
+        │   │       │   │   │   │       │           ├── (<=) Output: Graduate
+        │   │       │   │   │   │       │           └── (>) Output: Dropout
+        │   │       │   │   │   │       └── (>) [Course]
+        │   │       │   │   │   │           ├── (<=) [Displaced]
+        │   │       │   │   │   │           │   ├── (<=) Output: Enrolled
+        │   │       │   │   │   │           │   └── (>) [Mother's qualification]
+        │   │       │   │   │   │           │       ├── (<=) Output: Dropout
+        │   │       │   │   │   │           │       └── (>) Output: Graduate
+        │   │       │   │   │   │           └── (>) [Curricular units 1st sem (grade)]
+        │   │       │   │   │   │               ├── (<=) Output: Graduate
+        │   │       │   │   │   │               └── (>) [Scholarship holder]
+        │   │       │   │   │   │                   ├── (<=) [Admission grade]
+        │   │       │   │   │   │                   │   ├── (<=) Output: Graduate
+        │   │       │   │   │   │                   │   └── (>) Output: Enrolled
+        │   │       │   │   │   │                   └── (>) [Admission grade]
+        │   │       │   │   │   │                       ├── (<=) Output: Enrolled
+        │   │       │   │   │   │                       └── (>) [Previous qualification (grade)]
+        │   │       │   │   │   │                           ├── (<=) Output: Graduate
+        │   │       │   │   │   │                           └── (>) [Application order]
+        │   │       │   │   │   │                               ├── (<=) Output: Graduate
+        │   │       │   │   │   │                               └── (>) Output: Enrolled
+        │   │       │   │   │   └── (>) [Admission grade]
+        │   │       │   │   │       ├── (<=) [Admission grade]
+        │   │       │   │   │       │   ├── (<=) Output: Enrolled
+        │   │       │   │   │       │   └── (>) [GDP]
+        │   │       │   │   │       │       ├── (<=) [Curricular units 1st sem (enrolled)]
+        │   │       │   │   │       │       │   ├── (<=) [Admission grade]
+        │   │       │   │   │       │       │   │   ├── (<=) Output: Enrolled
+        │   │       │   │   │       │       │   │   └── (>) [Application mode]
+        │   │       │   │   │       │       │   │       ├── (<=) Output: Graduate
+        │   │       │   │   │       │       │   │       └── (>) Output: Enrolled
+        │   │       │   │   │       │       │   └── (>) Output: Graduate
+        │   │       │   │   │       │       └── (>) [Age at enrollment]
+        │   │       │   │   │       │           ├── (<=) [Application mode]
+        │   │       │   │   │       │           │   ├── (<=) Output: Graduate
+        │   │       │   │   │       │           │   └── (>) [Application order]
+        │   │       │   │   │       │           │       ├── (<=) Output: Enrolled
+        │   │       │   │   │       │           │       └── (>) Output: Graduate
+        │   │       │   │   │       │           └── (>) Output: Graduate
+        │   │       │   │   │       └── (>) [Curricular units 2nd sem (evaluations)]
+        │   │       │   │   │           ├── (<=) [Admission grade]
+        │   │       │   │   │           │   ├── (<=) Output: Graduate
+        │   │       │   │   │           │   └── (>) [Previous qualification (grade)]
+        │   │       │   │   │           │       ├── (<=) Output: Dropout
+        │   │       │   │   │           │       └── (>) Output: Graduate
+        │   │       │   │   │           └── (>) [Application mode]
+        │   │       │   │   │               ├── (<=) [Application order]
+        │   │       │   │   │               │   ├── (<=) Output: Graduate
+        │   │       │   │   │               │   └── (>) Output: Dropout
+        │   │       │   │   │               └── (>) Output: Enrolled
+        │   │       │   │   └── (>) Output: Enrolled
+        │   │       │   └── (>) [Admission grade]
+        │   │       │       ├── (<=) [Curricular units 1st sem (grade)]
+        │   │       │       │   ├── (<=) Output: Graduate
+        │   │       │       │   └── (>) [Curricular units 1st sem (grade)]
+        │   │       │       │       ├── (<=) Output: Enrolled
+        │   │       │       │       └── (>) Output: Graduate
+        │   │       │       └── (>) [Previous qualification (grade)]
+        │   │       │           ├── (<=) [Curricular units 1st sem (grade)]
+        │   │       │           │   ├── (<=) Output: Dropout
+        │   │       │           │   └── (>) [Debtor]
+        │   │       │           │       ├── (<=) Output: Graduate
+        │   │       │           │       └── (>) Output: Dropout
+        │   │       │           └── (>) [Course]
+        │   │       │               ├── (<=) Output: Graduate
+        │   │       │               └── (>) [Admission grade]
+        │   │       │                   ├── (<=) Output: Graduate
+        │   │       │                   └── (>) [Admission grade]
+        │   │       │                       ├── (<=) [Curricular units 1st sem (grade)]
+        │   │       │                       │   ├── (<=) Output: Graduate
+        │   │       │                       │   └── (>) [Curricular units 1st sem (grade)]
+        │   │       │                       │       ├── (<=) Output: Dropout
+        │   │       │                       │       └── (>) Output: Graduate
+        │   │       │                       └── (>) Output: Graduate
+        │   │       └── (>) [Curricular units 1st sem (grade)]
+        │   │           ├── (<=) [Unemployment rate]
+        │   │           │   ├── (<=) Output: Dropout
+        │   │           │   └── (>) Output: Graduate
+        │   │           └── (>) [GDP]
+        │   │               ├── (<=) [Mother's occupation]
+        │   │               │   ├── (<=) Output: Dropout
+        │   │               │   └── (>) [Admission grade]
+        │   │               │       ├── (<=) Output: Enrolled
+        │   │               │       └── (>) [Application mode]
+        │   │               │           ├── (<=) [Application order]
+        │   │               │           │   ├── (<=) Output: Graduate
+        │   │               │           │   └── (>) [Application order]
+        │   │               │           │       ├── (<=) Output: Enrolled
+        │   │               │           │       └── (>) [Application order]
+        │   │               │           │           ├── (<=) Output: Graduate
+        │   │               │           │           └── (>) Output: Enrolled
+        │   │               │           └── (>) [Previous qualification (grade)]
+        │   │               │               ├── (<=) Output: Graduate
+        │   │               │               └── (>) Output: Enrolled
+        │   │               └── (>) [Scholarship holder]
+        │   │                   ├── (<=) [Previous qualification (grade)]
+        │   │                   │   ├── (<=) [Father's occupation]
+        │   │                   │   │   ├── (<=) [Inflation rate]
+        │   │                   │   │   │   ├── (<=) [Previous qualification (grade)]
+        │   │                   │   │   │   │   ├── (<=) Output: Graduate
+        │   │                   │   │   │   │   └── (>) [Father's qualification]
+        │   │                   │   │   │   │       ├── (<=) Output: Enrolled
+        │   │                   │   │   │   │       └── (>) Output: Graduate
+        │   │                   │   │   │   └── (>) Output: Graduate
+        │   │                   │   │   └── (>) Output: Enrolled
+        │   │                   │   └── (>) [Previous qualification (grade)]
+        │   │                   │       ├── (<=) [Mother's qualification]
+        │   │                   │       │   ├── (<=) Output: Graduate
+        │   │                   │       │   └── (>) Output: Dropout
+        │   │                   │       └── (>) Output: Dropout
+        │   │                   └── (>) [Admission grade]
+        │   │                       ├── (<=) Output: Graduate
+        │   │                       └── (>) [Admission grade]
+        │   │                           ├── (<=) [Unemployment rate]
+        │   │                           │   ├── (<=) [Mother's qualification]
+        │   │                           │   │   ├── (<=) Output: Dropout
+        │   │                           │   │   └── (>) [Application order]
+        │   │                           │   │       ├── (<=) Output: Graduate
+        │   │                           │   │       └── (>) [Mother's occupation]
+        │   │                           │   │           ├── (<=) Output: Graduate
+        │   │                           │   │           └── (>) Output: Dropout
+        │   │                           │   └── (>) Output: Graduate
+        │   │                           └── (>) Output: Graduate
+        │   └── (>) [Scholarship holder]
+        │       ├── (<=) [Application mode]
+        │       │   ├── (<=) [Curricular units 2nd sem (evaluations)]
+        │       │   │   ├── (<=) [Inflation rate]
+        │       │   │   │   ├── (<=) Output: Graduate
+        │       │   │   │   └── (>) [Curricular units 1st sem (grade)]
+        │       │   │   │       ├── (<=) [Course]
+        │       │   │   │       │   ├── (<=) Output: Enrolled
+        │       │   │   │       │   └── (>) Output: Graduate
+        │       │   │   │       └── (>) Output: Graduate
+        │       │   │   └── (>) Output: Dropout
+        │       │   └── (>) [Previous qualification (grade)]
+        │       │       ├── (<=) [Course]
+        │       │       │   ├── (<=) [Mother's occupation]
+        │       │       │   │   ├── (<=) [Curricular units 2nd sem (grade)]
+        │       │       │   │   │   ├── (<=) Output: Graduate
+        │       │       │   │   │   └── (>) [Previous qualification (grade)]
+        │       │       │   │   │       ├── (<=) [Mother's qualification]
+        │       │       │   │   │       │   ├── (<=) Output: Graduate
+        │       │       │   │   │       │   └── (>) Output: Dropout
+        │       │       │   │   │       └── (>) Output: Dropout
+        │       │       │   │   └── (>) [Inflation rate]
+        │       │       │   │       ├── (<=) [Age at enrollment]
+        │       │       │   │       │   ├── (<=) [Curricular units 1st sem (evaluations)]
+        │       │       │   │       │   │   ├── (<=) Output: Graduate
+        │       │       │   │       │   │   └── (>) [Application order]
+        │       │       │   │       │   │       ├── (<=) Output: Graduate
+        │       │       │   │       │   │       └── (>) Output: Dropout
+        │       │       │   │       │   └── (>) [Marital status]
+        │       │       │   │       │       ├── (<=) Output: Dropout
+        │       │       │   │       │       └── (>) Output: Graduate
+        │       │       │   │       └── (>) Output: Graduate
+        │       │       │   └── (>) Output: Graduate
+        │       │       └── (>) Output: Graduate
+        │       └── (>) Output: Graduate
+        └── (>) [Tuition fees up to date]
+            ├── (<=) [Previous qualification (grade)]
+            │   ├── (<=) [Curricular units 1st sem (evaluations)]
+            │   │   ├── (<=) [Application order]
+            │   │   │   ├── (<=) Output: Enrolled
+            │   │   │   └── (>) Output: Dropout
+            │   │   └── (>) Output: Dropout
+            │   └── (>) [Course]
+            │       ├── (<=) [Marital status]
+            │       │   ├── (<=) Output: Graduate
+            │       │   └── (>) Output: Enrolled
+            │       └── (>) [Application mode]
+            │           ├── (<=) Output: Dropout
+            │           └── (>) Output: Enrolled
+            └── (>) [Curricular units 2nd sem (grade)]
+                ├── (<=) [Curricular units 2nd sem (credited)]
+                │   ├── (<=) [Course]
+                │   │   ├── (<=) [Course]
+                │   │   │   ├── (<=) [Curricular units 2nd sem (evaluations)]
+                │   │   │   │   ├── (<=) [Curricular units 1st sem (credited)]
+                │   │   │   │   │   ├── (<=) Output: Graduate
+                │   │   │   │   │   └── (>) Output: Dropout
+                │   │   │   │   └── (>) [Curricular units 2nd sem (approved)]
+                │   │   │   │       ├── (<=) [Father's qualification]
+                │   │   │   │       │   ├── (<=) [Course]
+                │   │   │   │       │   │   ├── (<=) [Curricular units 1st sem (approved)]
+                │   │   │   │       │   │   │   ├── (<=) [Curricular units 1st sem (approved)]
+                │   │   │   │       │   │   │   │   ├── (<=) Output: Dropout
+                │   │   │   │       │   │   │   │   └── (>) [Application mode]
+                │   │   │   │       │   │   │   │       ├── (<=) Output: Enrolled
+                │   │   │   │       │   │   │   │       └── (>) [Application mode]
+                │   │   │   │       │   │   │   │           ├── (<=) Output: Dropout
+                │   │   │   │       │   │   │   │           └── (>) Output: Enrolled
+                │   │   │   │       │   │   │   └── (>) [Father's qualification]
+                │   │   │   │       │   │   │       ├── (<=) Output: Graduate
+                │   │   │   │       │   │   │       └── (>) Output: Dropout
+                │   │   │   │       │   │   └── (>) [Application mode]
+                │   │   │   │       │   │       ├── (<=) Output: Enrolled
+                │   │   │   │       │   │       └── (>) Output: Graduate
+                │   │   │   │       │   └── (>) [Course]
+                │   │   │   │       │       ├── (<=) [Application mode]
+                │   │   │   │       │       │   ├── (<=) Output: Enrolled
+                │   │   │   │       │       │   └── (>) Output: Dropout
+                │   │   │   │       │       └── (>) [Curricular units 2nd sem (grade)]
+                │   │   │   │       │           ├── (<=) Output: Enrolled
+                │   │   │   │       │           └── (>) [Father's occupation]
+                │   │   │   │       │               ├── (<=) [Mother's qualification]
+                │   │   │   │       │               │   ├── (<=) Output: Graduate
+                │   │   │   │       │               │   └── (>) [Application mode]
+                │   │   │   │       │               │       ├── (<=) Output: Enrolled
+                │   │   │   │       │               │       └── (>) Output: Graduate
+                │   │   │   │       │               └── (>) [Unemployment rate]
+                │   │   │   │       │                   ├── (<=) [Curricular units 2nd sem (grade)]
+                │   │   │   │       │                   │   ├── (<=) [Curricular units 1st sem (credited)]
+                │   │   │   │       │                   │   │   ├── (<=) Output: Graduate
+                │   │   │   │       │                   │   │   └── (>) Output: Enrolled
+                │   │   │   │       │                   │   └── (>) Output: Graduate
+                │   │   │   │       │                   └── (>) [Marital status]
+                │   │   │   │       │                       ├── (<=) Output: Enrolled
+                │   │   │   │       │                       └── (>) [Father's occupation]
+                │   │   │   │       │                           ├── (<=) Output: Enrolled
+                │   │   │   │       │                           └── (>) Output: Graduate
+                │   │   │   │       └── (>) [Curricular units 2nd sem (enrolled)]
+                │   │   │   │           ├── (<=) [Mother's qualification]
+                │   │   │   │           │   ├── (<=) Output: Graduate
+                │   │   │   │           │   └── (>) Output: Enrolled
+                │   │   │   │           └── (>) Output: Enrolled
+                │   │   │   └── (>) [Curricular units 2nd sem (enrolled)]
+                │   │   │       ├── (<=) [Unemployment rate]
+                │   │   │       │   ├── (<=) [Course]
+                │   │   │       │   │   ├── (<=) [Course]
+                │   │   │       │   │   │   ├── (<=) Output: Graduate
+                │   │   │       │   │   │   └── (>) Output: Enrolled
+                │   │   │       │   │   └── (>) Output: Graduate
+                │   │   │       │   └── (>) [Admission grade]
+                │   │   │       │       ├── (<=) Output: Enrolled
+                │   │   │       │       └── (>) Output: Dropout
+                │   │   │       └── (>) [Curricular units 2nd sem (approved)]
+                │   │   │           ├── (<=) [Inflation rate]
+                │   │   │           │   ├── (<=) [Marital status]
+                │   │   │           │   │   ├── (<=) Output: Enrolled
+                │   │   │           │   │   └── (>) Output: Dropout
+                │   │   │           │   └── (>) [Application order]
+                │   │   │           │       ├── (<=) [Father's qualification]
+                │   │   │           │       │   ├── (<=) Output: Graduate
+                │   │   │           │       │   └── (>) [Previous qualification (grade)]
+                │   │   │           │       │       ├── (<=) Output: Enrolled
+                │   │   │           │       │       └── (>) [Application mode]
+                │   │   │           │       │           ├── (<=) Output: Graduate
+                │   │   │           │       │           └── (>) Output: Enrolled
+                │   │   │           │       └── (>) Output: Dropout
+                │   │   │           └── (>) [Age at enrollment]
+                │   │   │               ├── (<=) [Scholarship holder]
+                │   │   │               │   ├── (<=) [Father's occupation]
+                │   │   │               │   │   ├── (<=) [Curricular units 1st sem (grade)]
+                │   │   │               │   │   │   ├── (<=) [Previous qualification (grade)]
+                │   │   │               │   │   │   │   ├── (<=) Output: Graduate
+                │   │   │               │   │   │   │   └── (>) Output: Enrolled
+                │   │   │               │   │   │   └── (>) Output: Graduate
+                │   │   │               │   │   └── (>) [Father's occupation]
+                │   │   │               │   │       ├── (<=) Output: Enrolled
+                │   │   │               │   │       └── (>) [Curricular units 1st sem (approved)]
+                │   │   │               │   │           ├── (<=) [Mother's qualification]
+                │   │   │               │   │           │   ├── (<=) Output: Enrolled
+                │   │   │               │   │           │   └── (>) Output: Graduate
+                │   │   │               │   │           └── (>) Output: Graduate
+                │   │   │               │   └── (>) Output: Graduate
+                │   │   │               └── (>) [Curricular units 2nd sem (grade)]
+                │   │   │                   ├── (<=) Output: Enrolled
+                │   │   │                   └── (>) [Age at enrollment]
+                │   │   │                       ├── (<=) Output: Enrolled
+                │   │   │                       └── (>) Output: Graduate
+                │   │   └── (>) [Curricular units 2nd sem (evaluations)]
+                │   │       ├── (<=) [Father's qualification]
+                │   │       │   ├── (<=) [Admission grade]
+                │   │       │   │   ├── (<=) Output: Enrolled
+                │   │       │   │   └── (>) Output: Dropout
+                │   │       │   └── (>) [Curricular units 2nd sem (approved)]
+                │   │       │       ├── (<=) [Previous qualification (grade)]
+                │   │       │       │   ├── (<=) [Previous qualification (grade)]
+                │   │       │       │   │   ├── (<=) [Curricular units 2nd sem (grade)]
+                │   │       │       │   │   │   ├── (<=) Output: Dropout
+                │   │       │       │   │   │   └── (>) Output: Graduate
+                │   │       │       │   │   └── (>) Output: Graduate
+                │   │       │       │   └── (>) Output: Enrolled
+                │   │       │       └── (>) [Curricular units 1st sem (approved)]
+                │   │       │           ├── (<=) [Previous qualification (grade)]
+                │   │       │           │   ├── (<=) Output: Graduate
+                │   │       │           │   └── (>) Output: Enrolled
+                │   │       │           └── (>) Output: Graduate
+                │   │       └── (>) [Unemployment rate]
+                │   │           ├── (<=) Output: Enrolled
+                │   │           └── (>) Output: Dropout
+                │   └── (>) [Curricular units 1st sem (grade)]
+                │       ├── (<=) [Unemployment rate]
+                │       │   ├── (<=) Output: Dropout
+                │       │   └── (>) [Marital status]
+                │       │       ├── (<=) Output: Graduate
+                │       │       └── (>) Output: Dropout
+                │       └── (>) [Age at enrollment]
+                │           ├── (<=) Output: Graduate
+                │           └── (>) Output: Dropout
+                └── (>) [Curricular units 1st sem (grade)]
+                    ├── (<=) [Application mode]
+                    │   ├── (<=) [Curricular units 2nd sem (grade)]
+                    │   │   ├── (<=) [Application mode]
+                    │   │   │   ├── (<=) [Mother's qualification]
+                    │   │   │   │   ├── (<=) Output: Enrolled
+                    │   │   │   │   └── (>) Output: Dropout
+                    │   │   │   └── (>) Output: Graduate
+                    │   │   └── (>) Output: Graduate
+                    │   └── (>) Output: Dropout
+                    └── (>) [Debtor]
+                        ├── (<=) Output: Graduate
+                        └── (>) [Marital status]
+                            ├── (<=) Output: Graduate
+                            └── (>) Output: Enrolled
