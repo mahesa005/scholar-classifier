@@ -26,7 +26,7 @@ class SoftmaxRegression(BaseClassifier):
         self.std = None
         self.loss_history = []
         self.classes_ = None
-
+    
     def _add_bias(self, X: np.ndarray) -> np.ndarray:
         """
         Add a bias feature (column of ones) to the input data X.
@@ -72,34 +72,6 @@ class SoftmaxRegression(BaseClassifier):
 
         # Normalize to get probabilities
         return exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
-        
-    
-    def _one_hot(self, y: np.ndarray, n_classes: int) -> np.ndarray:
-        """
-        One-hot encode the class labels.
-
-        Assumption: y has already been label encoded to integers 0..K-1.
-        ----------
-
-        Parameters
-        ----------
-        y : np.ndarray, shape (n_samples,)
-            Class labels as integers.
-        n_classes : int
-            Total number of classes.
-        Returns
-        -------
-        y_one_hot : np.ndarray, shape (n_samples, n_classes)
-            One-hot encoded class labels.
-        """
-        # Initialize the one-hot encoded matrix
-        one_hot = np.zeros((y.shape[0], n_classes))
-
-        # Set the appropriate elements to 1
-        for i in range(y.shape[0]):
-            class_index = y[i]
-            one_hot[i][class_index] = 1
-        return one_hot
     
     def _compute_loss(self, Y_true: np.ndarray, Y_pred: np.ndarray) -> float:
         """
